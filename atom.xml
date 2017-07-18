@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-18T04:26:07.609Z</updated>
+  <updated>2017-07-18T06:47:13.785Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>article</title>
+    <link href="http://yoursite.com/2017/07/18/article/"/>
+    <id>http://yoursite.com/2017/07/18/article/</id>
+    <published>2017-07-18T06:46:35.000Z</published>
+    <updated>2017-07-18T06:47:13.785Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="article"><a href="#article" class="headerlink" title="article"></a>article</h1><ul>
+<li>test</li>
+<li>test</li>
+<li>config</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;article&quot;&gt;&lt;a href=&quot;#article&quot; class=&quot;headerlink&quot; title=&quot;article&quot;&gt;&lt;/a&gt;article&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;test&lt;/li&gt;
+&lt;li&gt;test&lt;/li&gt;
+&lt;li&gt;config&lt;/li&gt;
+&lt;/ul
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>About跨域</title>
@@ -85,7 +112,7 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
     <link href="http://yoursite.com/2017/07/17/hello-world/"/>
     <id>http://yoursite.com/2017/07/17/hello-world/</id>
     <published>2017-07-17T12:30:06.448Z</published>
-    <updated>2017-07-18T03:45:42.226Z</updated>
+    <updated>2017-07-18T05:06:35.417Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -110,6 +137,8 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
       <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
     
       <category term="Another Tag" scheme="http://yoursite.com/tags/Another-Tag/"/>
+    
+      <category term="WordCount" scheme="http://yoursite.com/tags/WordCount/"/>
     
   </entry>
   
