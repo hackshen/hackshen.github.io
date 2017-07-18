@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-18T06:47:13.785Z</updated>
+  <updated>2017-07-18T04:26:07.609Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,33 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>article</title>
-    <link href="http://yoursite.com/2017/07/18/article/"/>
-    <id>http://yoursite.com/2017/07/18/article/</id>
-    <published>2017-07-18T06:46:35.000Z</published>
-    <updated>2017-07-18T06:47:13.785Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="article"><a href="#article" class="headerlink" title="article"></a>article</h1><ul>
-<li>test</li>
-<li>test</li>
-<li>config</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;article&quot;&gt;&lt;a href=&quot;#article&quot; class=&quot;headerlink&quot; title=&quot;article&quot;&gt;&lt;/a&gt;article&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;test&lt;/li&gt;
-&lt;li&gt;test&lt;/li&gt;
-&lt;li&gt;config&lt;/li&gt;
-&lt;/ul
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>About跨域</title>
