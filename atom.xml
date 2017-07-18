@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-18T03:45:42.226Z</updated>
+  <updated>2017-07-18T04:26:07.609Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About跨域</title>
+    <link href="http://yoursite.com/2017/07/18/About%E8%B7%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2017/07/18/About跨域/</id>
+    <published>2017-07-18T04:22:47.000Z</published>
+    <updated>2017-07-18T04:26:07.609Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1、Ajax-PHP-跨域问题（服务端方案）"><a href="#1、Ajax-PHP-跨域问题（服务端方案）" class="headerlink" title="1、Ajax + PHP 跨域问题（服务端方案）"></a>1、Ajax + PHP 跨域问题（服务端方案）</h1><p>1、指定域名(<a href="http://www.aipay.org),只需要在请求的文件头中添如下代码" target="_blank" rel="external">http://www.aipay.org),只需要在请求的文件头中添如下代码</a></p>
+<pre><code>header(&apos;Access-Control-Allow-Origin:http://www.aipay.org&apos;);
+</code></pre><p>2、允许所有域名都可以访问,只需要在请求的文件头中添如下代码</p>
+<pre><code>header(&apos;Access-Control-Allow-Origin:*&apos;); 
+</code></pre><h1 id="2、Ajax-PHP-跨域问题（通过客户端解决方案）"><a href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）" class="headerlink" title="2、Ajax + PHP 跨域问题（通过客户端解决方案）"></a>2、Ajax + PHP 跨域问题（通过客户端解决方案）</h1><p>1.PHP代码：</p>
+<pre><code>&lt;?php 
+$cb=$_GET[&apos;callback&apos;];
+echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
+?&gt;
+</code></pre><p>2.HTML代码：</p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.getJSON(&apos;http://www.aipay.org/jsops/jsonp.php?callback=?&apos;,function(data){
+            console.log(data)
+        });    
+&lt;/script&gt;
+</code></pre><h1 id="3、JSONP解决跨域问题"><a href="#3、JSONP解决跨域问题" class="headerlink" title="3、JSONP解决跨域问题"></a>3、JSONP解决跨域问题</h1><p><strong>方案一：<br>通过getJSON,?后面会生成一个jQuery开头的随机函数名如：jQuery210101981845619370246_1500012205578如果我们想自己定义函数名呢看方案二</strong></p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.getJSON(&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?&apos;,function(data){
+        console.log(data)
+     })
+&lt;/script&gt;
+</code></pre><p><strong>方案二：</strong></p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.ajax({
+        url:&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?&apos;,
+        dataType:&apos;jsonp&apos;,
+        jsonpCallback:&apos;test&apos;, //自定义回调的函数名
+        success:function(response){
+            console.log(response)
+        }
+    })
+&lt;/script&gt;
+</code></pre><h1 id="4、用原生方法解决跨域问题"><a href="#4、用原生方法解决跨域问题" class="headerlink" title="4、用原生方法解决跨域问题"></a>4、用原生方法解决跨域问题</h1><pre><code>&lt;script&gt;
+    var script = document.createElement(&apos;script&apos;); 
+        script.src=&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=baidu&apos;;
+        document.body.appendChild(script);
+        function baidu(data){
+            console.log(data);
+        }
+&lt;/script&gt;    
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1、Ajax-PHP-跨域问题（服务端方案）&quot;&gt;&lt;a href=&quot;#1、Ajax-PHP-跨域问题（服务端方案）&quot; class=&quot;headerlink&quot; title=&quot;1、Ajax + PHP 跨域问题（服务端方案）&quot;&gt;&lt;/a&gt;1、Ajax + PHP 跨域问题（
+    
+    </summary>
+    
+      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
+    
+    
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

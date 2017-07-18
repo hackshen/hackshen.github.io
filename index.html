@@ -268,6 +268,182 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/About跨域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hackshen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars6.githubusercontent.com/u/26369477?v=4&u=3d55e3d5058ba2ec2182b1c27b07b5b24fec5beb&s=400">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The wind">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/18/About跨域/" itemprop="url">About跨域</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T12:22:47+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1、Ajax-PHP-跨域问题（服务端方案）"><a href="#1、Ajax-PHP-跨域问题（服务端方案）" class="headerlink" title="1、Ajax + PHP 跨域问题（服务端方案）"></a>1、Ajax + PHP 跨域问题（服务端方案）</h1><p>1、指定域名(<a href="http://www.aipay.org),只需要在请求的文件头中添如下代码" target="_blank" rel="external">http://www.aipay.org),只需要在请求的文件头中添如下代码</a></p>
+<pre><code>header(&apos;Access-Control-Allow-Origin:http://www.aipay.org&apos;);
+</code></pre><p>2、允许所有域名都可以访问,只需要在请求的文件头中添如下代码</p>
+<pre><code>header(&apos;Access-Control-Allow-Origin:*&apos;); 
+</code></pre><h1 id="2、Ajax-PHP-跨域问题（通过客户端解决方案）"><a href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）" class="headerlink" title="2、Ajax + PHP 跨域问题（通过客户端解决方案）"></a>2、Ajax + PHP 跨域问题（通过客户端解决方案）</h1><p>1.PHP代码：</p>
+<pre><code>&lt;?php 
+$cb=$_GET[&apos;callback&apos;];
+echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
+?&gt;
+</code></pre><p>2.HTML代码：</p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.getJSON(&apos;http://www.aipay.org/jsops/jsonp.php?callback=?&apos;,function(data){
+            console.log(data)
+        });    
+&lt;/script&gt;
+</code></pre><h1 id="3、JSONP解决跨域问题"><a href="#3、JSONP解决跨域问题" class="headerlink" title="3、JSONP解决跨域问题"></a>3、JSONP解决跨域问题</h1><p><strong>方案一：<br>通过getJSON,?后面会生成一个jQuery开头的随机函数名如：jQuery210101981845619370246_1500012205578如果我们想自己定义函数名呢看方案二</strong></p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.getJSON(&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?&apos;,function(data){
+        console.log(data)
+     })
+&lt;/script&gt;
+</code></pre><p><strong>方案二：</strong></p>
+<pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $.ajax({
+        url:&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?&apos;,
+        dataType:&apos;jsonp&apos;,
+        jsonpCallback:&apos;test&apos;, //自定义回调的函数名
+        success:function(response){
+            console.log(response)
+        }
+    })
+&lt;/script&gt;
+</code></pre><h1 id="4、用原生方法解决跨域问题"><a href="#4、用原生方法解决跨域问题" class="headerlink" title="4、用原生方法解决跨域问题"></a>4、用原生方法解决跨域问题</h1><pre><code>&lt;script&gt;
+    var script = document.createElement(&apos;script&apos;); 
+        script.src=&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=baidu&apos;;
+        document.body.appendChild(script);
+        function baidu(data){
+            console.log(data);
+        }
+&lt;/script&gt;    
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -447,7 +623,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -458,7 +634,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -469,7 +645,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
