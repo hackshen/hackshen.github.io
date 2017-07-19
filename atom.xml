@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-19T05:25:31.878Z</updated>
+  <updated>2017-07-19T11:48:17.037Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gulp-Livereload</title>
+    <link href="http://yoursite.com/2017/07/19/Gulp-Livereload/"/>
+    <id>http://yoursite.com/2017/07/19/Gulp-Livereload/</id>
+    <published>2017-07-19T10:12:13.000Z</published>
+    <updated>2017-07-19T11:48:17.037Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p> <strong>gulp-liereload是一个监听的文件发生改变时，浏览器会自动加载修改的文件，帮你自动刷新网页，彻底解放F5</strong> </p>
+<h3 id="1、本地安装："><a href="#1、本地安装：" class="headerlink" title="1、本地安装："></a>1、本地安装：</h3><pre><code>npm install gulp -g
+npm install gulp -D  
+npm install gulp-less -D
+npm install gulp-livereload -D
+</code></pre><h3 id="2、配置gulpfile-js"><a href="#2、配置gulpfile-js" class="headerlink" title="2、配置gulpfile.js"></a>2、配置gulpfile.js</h3><pre><code>var gulp = require(&apos;gulp&apos;), //引入gulp
+    less = require(&apos;gulp-less&apos;), //引入less
+    livereload = require(&apos;gulp-livereload&apos;); //引入livereload
+
+gulp.task(&apos;less&apos;, function() { //建一个less任务
+    gulp.src(&apos;src/less/*.less&apos;) //选择src/less/下面所有已less结尾的文件
+        .pipe(less()) //编译less
+        .pipe(gulp.dest(&apos;src/css&apos;)) //编译后传到src/css目录下
+        .pipe(livereload()); //加载修改的文件
+});
+</code></pre><a id="more"></a>
+<pre><code>gulp.task(&apos;watch&apos;, function() { //新建一个watch任务
+    livereload.listen();  
+    gulp.watch(&apos;src/less/**/*.less&apos;, [&apos;less&apos;]); //监听src/less下的less是否改变，然后执行less任务
+     gulp.watch(&apos;src/**/*.*&apos;, function(event) {
+           livereload.changed(event.path); //把修改文件的路径输出到控制台
+       });
+});
+</code></pre><h3 id="3、安装chrome插件"><a href="#3、安装chrome插件" class="headerlink" title="3、安装chrome插件"></a>3、安装chrome插件</h3><p>在谷歌商店里面搜索livereload下载并安装  </p>
+<h3 id="4、执行任务"><a href="#4、执行任务" class="headerlink" title="4、执行任务"></a>4、执行任务</h3><pre><code>在当前目录打开命令行输入 gulp watch
+
+然后在浏览器打开你的网页地址，必须以服务的形式打开比如：localhost/xx.html然后激活刚才安装的插件，（鼠标点击一下，里面的圆点变为实心即可）
+
+这时你就可以快乐的写代码了
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;gulp-liereload是一个监听的文件发生改变时，浏览器会自动加载修改的文件，帮你自动刷新网页，彻底解放F5&lt;/strong&gt; &lt;/p&gt;
+&lt;h3 id=&quot;1、本地安装：&quot;&gt;&lt;a href=&quot;#1、本地安装：&quot; class=&quot;headerlink&quot; title=&quot;1、本地安装：&quot;&gt;&lt;/a&gt;1、本地安装：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install gulp -g
+npm install gulp -D  
+npm install gulp-less -D
+npm install gulp-livereload -D
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;2、配置gulpfile-js&quot;&gt;&lt;a href=&quot;#2、配置gulpfile-js&quot; class=&quot;headerlink&quot; title=&quot;2、配置gulpfile.js&quot;&gt;&lt;/a&gt;2、配置gulpfile.js&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;var gulp = require(&amp;apos;gulp&amp;apos;), //引入gulp
+    less = require(&amp;apos;gulp-less&amp;apos;), //引入less
+    livereload = require(&amp;apos;gulp-livereload&amp;apos;); //引入livereload
+
+gulp.task(&amp;apos;less&amp;apos;, function() { //建一个less任务
+    gulp.src(&amp;apos;src/less/*.less&amp;apos;) //选择src/less/下面所有已less结尾的文件
+        .pipe(less()) //编译less
+        .pipe(gulp.dest(&amp;apos;src/css&amp;apos;)) //编译后传到src/css目录下
+        .pipe(livereload()); //加载修改的文件
+});
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
+    
+      <category term="livereload" scheme="http://yoursite.com/tags/livereload/"/>
+    
+  </entry>
   
   <entry>
     <title>About跨域</title>
