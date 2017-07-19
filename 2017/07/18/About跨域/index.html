@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/18/About跨域/index.html">
 <meta property="og:site_name" content="The wind">
 <meta property="og:description" content="1、Ajax + PHP 跨域问题（服务端方案）1、指定域名(http://www.aipay.org),只需要在请求的文件头中添如下代码 header(&amp;apos;Access-Control-Allow-Origin:http://www.aipay.org&amp;apos;); 2、允许所有域名都可以访问,只需要在请求的文件头中添如下代码 header(&amp;apos;Access-Control-A">
-<meta property="og:updated_time" content="2017-07-18T04:26:07.609Z">
+<meta property="og:updated_time" content="2017-07-19T05:25:31.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About跨域">
 <meta name="twitter:description" content="1、Ajax + PHP 跨域问题（服务端方案）1、指定域名(http://www.aipay.org),只需要在请求的文件头中添如下代码 header(&amp;apos;Access-Control-Allow-Origin:http://www.aipay.org&amp;apos;); 2、允许所有域名都可以访问,只需要在请求的文件头中添如下代码 header(&amp;apos;Access-Control-A">
@@ -354,11 +354,12 @@
       
 
       
-        <h1 id="1、Ajax-PHP-跨域问题（服务端方案）"><a href="#1、Ajax-PHP-跨域问题（服务端方案）" class="headerlink" title="1、Ajax + PHP 跨域问题（服务端方案）"></a>1、Ajax + PHP 跨域问题（服务端方案）</h1><p>1、指定域名(<a href="http://www.aipay.org),只需要在请求的文件头中添如下代码" target="_blank" rel="external">http://www.aipay.org),只需要在请求的文件头中添如下代码</a></p>
+        <h2 id="1、Ajax-PHP-跨域问题（服务端方案）"><a href="#1、Ajax-PHP-跨域问题（服务端方案）" class="headerlink" title="1、Ajax + PHP 跨域问题（服务端方案）"></a>1、Ajax + PHP 跨域问题（服务端方案）</h2><p>1、指定域名(<a href="http://www.aipay.org),只需要在请求的文件头中添如下代码" target="_blank" rel="external">http://www.aipay.org),只需要在请求的文件头中添如下代码</a></p>
 <pre><code>header(&apos;Access-Control-Allow-Origin:http://www.aipay.org&apos;);
 </code></pre><p>2、允许所有域名都可以访问,只需要在请求的文件头中添如下代码</p>
 <pre><code>header(&apos;Access-Control-Allow-Origin:*&apos;); 
-</code></pre><h1 id="2、Ajax-PHP-跨域问题（通过客户端解决方案）"><a href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）" class="headerlink" title="2、Ajax + PHP 跨域问题（通过客户端解决方案）"></a>2、Ajax + PHP 跨域问题（通过客户端解决方案）</h1><p>1.PHP代码：</p>
+</code></pre><h2 id="2、Ajax-PHP-跨域问题（通过客户端解决方案）"><a href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）" class="headerlink" title="2、Ajax + PHP 跨域问题（通过客户端解决方案）"></a>2、Ajax + PHP 跨域问题（通过客户端解决方案）</h2><a id="more"></a>
+<p>1.PHP代码：</p>
 <pre><code>&lt;?php 
 $cb=$_GET[&apos;callback&apos;];
 echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
@@ -370,14 +371,14 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
             console.log(data)
         });    
 &lt;/script&gt;
-</code></pre><h1 id="3、JSONP解决跨域问题"><a href="#3、JSONP解决跨域问题" class="headerlink" title="3、JSONP解决跨域问题"></a>3、JSONP解决跨域问题</h1><p><strong>方案一：<br>通过getJSON,?后面会生成一个jQuery开头的随机函数名如：jQuery210101981845619370246_1500012205578如果我们想自己定义函数名呢看方案二</strong></p>
+</code></pre><h2 id="3、JSONP解决跨域问题"><a href="#3、JSONP解决跨域问题" class="headerlink" title="3、JSONP解决跨域问题"></a>3、JSONP解决跨域问题</h2><p><strong>方案一：</strong>  通过getJSON,?后面会生成一个jQuery开头的随机函数名如jQuery210101981845619370246_1500012205578如果我们想自己定义函数名呢看方案二</p>
 <pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     $.getJSON(&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?&apos;,function(data){
         console.log(data)
      })
 &lt;/script&gt;
-</code></pre><p><strong>方案二：</strong></p>
+</code></pre><p><strong>方案二：</strong><br>    自定义函数名</p>
 <pre><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     $.ajax({
@@ -389,7 +390,7 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
         }
     })
 &lt;/script&gt;
-</code></pre><h1 id="4、用原生方法解决跨域问题"><a href="#4、用原生方法解决跨域问题" class="headerlink" title="4、用原生方法解决跨域问题"></a>4、用原生方法解决跨域问题</h1><pre><code>&lt;script&gt;
+</code></pre><h2 id="4、用原生方法解决跨域问题"><a href="#4、用原生方法解决跨域问题" class="headerlink" title="4、用原生方法解决跨域问题"></a>4、用原生方法解决跨域问题</h2><pre><code>&lt;script&gt;
     var script = document.createElement(&apos;script&apos;); 
         script.src=&apos;http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=baidu&apos;;
         document.body.appendChild(script);
@@ -531,7 +532,7 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -609,7 +610,7 @@ echo $cb.&apos;({&quot;name&quot;:&quot;张三&quot;})&apos;;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、Ajax-PHP-跨域问题（服务端方案）"><span class="nav-number">1.</span> <span class="nav-text">1、Ajax + PHP 跨域问题（服务端方案）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）"><span class="nav-number">2.</span> <span class="nav-text">2、Ajax + PHP 跨域问题（通过客户端解决方案）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、JSONP解决跨域问题"><span class="nav-number">3.</span> <span class="nav-text">3、JSONP解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、用原生方法解决跨域问题"><span class="nav-number">4.</span> <span class="nav-text">4、用原生方法解决跨域问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Ajax-PHP-跨域问题（服务端方案）"><span class="nav-number">1.</span> <span class="nav-text">1、Ajax + PHP 跨域问题（服务端方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）"><span class="nav-number">2.</span> <span class="nav-text">2、Ajax + PHP 跨域问题（通过客户端解决方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、JSONP解决跨域问题"><span class="nav-number">3.</span> <span class="nav-text">3、JSONP解决跨域问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、用原生方法解决跨域问题"><span class="nav-number">4.</span> <span class="nav-text">4、用原生方法解决跨域问题</span></a></li></ol></div>
             
 
           </div>
