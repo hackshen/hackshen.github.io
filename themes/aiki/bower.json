@@ -1,0 +1,8 @@
+{
+	"name": "hexo-theme-monogatari",
+	"version": "0.1.0",
+	"dependencies": {
+		"semantic-ui": null,
+		"jquery": null
+	}
+}

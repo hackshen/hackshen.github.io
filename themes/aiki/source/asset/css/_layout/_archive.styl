@@ -1,0 +1,67 @@
+
+.box-archive-list
+	margin: 0 auto
+	width: 90%
+
+	//debug
+	//border: 1px solid blue
+
+	li
+		margin-top: 20px
+		margin-bottom: 40px
+		border-bottom: border-default
+
+.box-archive-item-date
+	//position
+	position: relative
+	float: right
+
+.box-archive-item-description
+	padding-top: block-30
+	padding-bottom: block-10
+
+.panel-archive-index-title
+	margin-bottom: block-40
+
+
+.box-archive-index
+	margin: 0 auto
+	width: 90%
+
+	//debug
+	//border: 1px solid blue
+
+
+
+[class*='col-']
+	float: left
+	padding: 0 5px
+
+	+:first-child
+		padding: 0 5px 0 0
+
+	+:last-child
+		padding: 0 0 0 5px
+
+
+.box-archive-index
+	h3
+		border-bottom: border-default
+		padding-bottom: block-10
+		margin-bottom: block-20
+		text-transform: uppercase
+		font-size: font-small
+		letter-spacing: 2px
+
+	ul
+		padding-left: 15px
+		line-height: 2
+
+	span
+		font-size: font-small
+		position: relative
+		top: -1px
+		color: color-grey
+
+	span:before
+		content: " - "

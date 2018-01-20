@@ -1,0 +1,78 @@
+<%
+	var list_block_type = theme.list_block_type;
+	var list_box_css = '';
+	var list_item_css = '';
+	if (list_block_type == 'conbine') {
+		list_box_css = 'ui raised segment';
+		list_item_css = '';
+	} else {
+		list_box_css = '';
+		list_item_css = 'ui piled raised segment';
+	}
+%>
+		<div class="panel-content">
+			<div class="ui grid box-content">
+				<div class="two wide column">
+					&nbsp;
+				</div>
+
+				<div class="twelve wide column">
+					<h2 class="panel-title panel-archive-title"><%= panel_title %></h2>
+					<div class="<%= list_box_css %> box-archive-list">
+
+<%
+
+	var i = 0;
+	var color_map = ['black', 'green', 'red', 'blue', 'orange', 'purple', 'teal'];
+	page.posts.each(function(article) {
+		var color = 'teal';
+		var color_index = i % color_map.length;
+		i++;
+		color = color_map[color_index];
+		if (!color) {
+			color = 'teal';
+		}
+		var target = '';
+		var url = article.path;
+		if (article.link) {
+			url = article.link;
+			target = ' target="_blank"';
+		}
+		var title = article.title;
+		if (!title) {
+			title = 'No Title';
+		}
+
+		var description = article.description;
+		if (!description) {
+			description = article.content;
+		}
+
+%>
+						<div class="<%= list_item_css %> box-archive-item" itemscope itemtype="http://schema.org/Article" >
+							<div class="ui <%= color %> ribbon label"><a href="<%= url_for(url) %>" itemprop="url" <%- target %>><span  class="archive-item-title" itemprop="name"><%= title %></span></a></div>
+
+							<p class="box-archive-item-date"><a href="<%- url_for(url) %>"><span class="archive-item-date" itemprop="datePublished" content="<%= date(page.date) %>"><%= date(article.date) %></span></a></p>
+
+							<div class="box-archive-item-description">
+<%- description %>
+							</div>
+						</div>
+<%
+	});
+%>
+					</div>
+				</div>
+
+				<div class="two wide column">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel-archive-nav">
+			<div class="box-archive-nav">
+<%- partial('_widget/archive-nav') %>
+			</div>
+		</div>

@@ -1,0 +1,107 @@
+<%
+	var title = page.title;
+
+	if (is_archive()){
+		title = 'Archive';
+	if (is_month()){
+		title += ': ' + page.year + '/' + page.month;
+	} else if (is_year()){
+		title += ': ' + page.year;
+	}
+	} else if (is_category()){
+		title = 'Category: ' + page.category;
+	} else if (is_tag()){
+		title = 'Tag: ' + page.tag;
+	}
+
+	if (title) {
+		title  = title + ' | ' + config.title;
+	} else {
+		title = config.title;
+	}
+
+
+	var description = page.description;
+	if (is_home()) {
+		description = config.description;
+	}
+	if (!description) {
+		description = title;
+	}
+
+	var favicon = theme.favicon;
+	if (!favicon) {
+		//favicon = 'favicon.ico';
+		favicon = 'favicon.png';
+	}
+	favicon = config.url + '/' + favicon;
+
+	var image_src = theme.image_src;
+	if (is_home()) {
+		image_src = theme.logo;
+	}
+	if (!image_src) {
+		image_src = theme.image_src;
+	}
+	if (!image_src) {
+		image_src = 'logo.png';
+	}
+	image_src = config.url + '/' + image_src;
+
+	var rss = theme.rss;
+	if (!rss) {
+		rss = '/atom.xml';
+	}
+	rss = config.url + '/' + rss;
+
+	var canonical = url_for(path);
+	if (is_home()) {
+		canonical = url_for(config.root);
+	}
+
+	var style = url_for(theme.style);
+
+	var semantic_ui_css = url_for(theme.semantic_ui_css);
+	var semantic_ui_js = url_for(theme.semantic_ui_js);
+	var jquery_js = url_for(theme.jquery_js);
+
+	if (theme.use_cdn) {
+		semantic_ui_css = '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.19.3/css/semantic.min.css';
+		semantic_ui_js = '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.19.3/javascript/semantic.min.js';
+		jquery_js = '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js';
+	}
+
+%>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> <%= title %> </title>
+	<meta property="og:title" content=" <%= title %> " />
+	<meta name="twitter:title" content=" <%= title %> ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" <%= description %> ">
+	<meta property="og:description" content=" <%= description %> " />
+	<meta name="twitter:description" content=" <%= description %> " />
+
+	<link rel="icon" type="image/x-icon" href="<%= favicon %>">
+
+	<link rel="image_src" href="<%= image_src %>" >
+	<meta property="og:image" content="<%= image_src %>" />
+<%
+	if (theme.rss) {
+%>
+	<link href="<%= rss %>" title="<%= config.title %>" type="application/atom+xml" rel="alternative">
+<%
+	}
+%>
+	<link rel="canonical" href="<%= canonical %>">
+
+	<link rel="stylesheet" type="text/css" href="<%= semantic_ui_css %>">
+	<link rel="stylesheet" href="<%= style %>">
+
+	<script src="<%= jquery_js %>"></script>
+	<script src="<%= semantic_ui_js %>"></script>

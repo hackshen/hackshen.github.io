@@ -1,0 +1,19 @@
+<%
+	var nav_class = 'ui transparent vertical inverted labeled icon menu';
+	if (nav_type == 'footer') {
+		nav_class = 'ui transparent inverted menu';
+	}
+%>
+		<nav class="<%= nav_class %>">
+<%
+	for (var i in theme.menu) {
+		var menu_item = theme.menu[i];
+%>
+			<a class="item" href="<%- url_for(menu_item.url) %>">
+				<i class="<%= menu_item.icon %> icon"></i>
+				<%= menu_item.title %>
+			</a>
+<%
+	} // end for
+%>
+		</nav>

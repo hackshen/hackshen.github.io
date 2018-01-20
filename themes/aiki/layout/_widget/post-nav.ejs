@@ -1,0 +1,16 @@
+
+<%
+	if (page.prev) {
+%>
+					<a href="<%- url_for(config.root + page.prev.path) %>" title="<%-page.prev.title %>">&larr; Prev</a>
+<%
+	}
+%>
+
+<%
+	if (page.next) {
+%>
+					<a href="<%- url_for(config.root + page.next.path) %>" title="<%-page.next.title %>">Next &rarr;</a>
+<%
+	}
+%>

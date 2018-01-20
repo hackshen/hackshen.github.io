@@ -1,0 +1,24 @@
+//// color topic
+color-topic-path(theme)
+	//return "_color/_" + theme + ".styl"
+	"_color/_" + theme + ".styl"
+
+//color-topic-styl = "_color/_" + color-topic + ".styl"
+color-topic-styl = color-topic-path(color-topic)
+
+//// syntax highlight
+syntax-highlight-path(theme)
+	//return "_highlight/_" + theme + ".styl"
+	"_highlight/_" + theme + ".styl"
+
+//syntax-highlight-styl = "_highlight/_" + syntax-highlight + ".styl"
+syntax-highlight-styl = syntax-highlight-path(syntax-highlight)
+
+//// shadow
+box-side-shadow(color)
+	-webkit-box-shadow: 0 3px 12px 3px color
+	-moz-box-shadow: 0 3px 12px 3px color
+	box-shadow: 0 3px 12px 3px color
+
+
+

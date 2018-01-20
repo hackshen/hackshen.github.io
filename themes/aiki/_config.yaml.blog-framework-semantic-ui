@@ -1,0 +1,36 @@
+
+style: asset/css/style.css
+logo: asset/img/logo.png
+image_src: asset/img/logo.png
+favicon: asset/img/favicon.png
+
+#use_cdn: false
+use_cdn: true
+jquery_js: asset/vendor/jquery/dist/jquery.min.js
+semantic_ui_css: asset/vendor/semantic-ui/build/packaged/css/semantic.min.css
+semantic_ui_js: asset/vendor/semantic-ui/build/packaged/javascript/semantic.min.js
+
+
+menu:
+	home:
+		title: Home
+		url: /blog-framework-semantic-ui/article/
+		icon: home
+	sitemap:
+		title: Sitemap
+		url: find/archive/
+		icon: sitemap
+	index:
+		title: Index
+		url: find/tag/index/
+		icon: browser
+#	page:
+#		title: Page
+#		url: page/
+#		icon: browser
+
+#list_block_type: conbine
+
+#google_analytics: test
+
+rss: atom.xml

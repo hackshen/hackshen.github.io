@@ -1,0 +1,102 @@
+
+		<div class="panel-content">
+			<div class="ui grid box-content">
+				<div class="two wide column">
+					&nbsp;
+				</div>
+
+				<div class="twelve wide column">
+
+					<div class="box-post-item">
+						<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+<%
+	if (page.video) {
+%>
+							<div class="video-container">
+								<iframe src="//www.youtube.com/embed/<%= page.video %>" frameborder="0" allowfullscreen></iframe>
+							</div>
+<%
+	}
+%>
+
+							<p class="content-meta">
+								<span class="meta-date" itemprop="datePublished" content="<%= date(page.date) %>"><%= date(page.date) %></span>
+
+<%
+	if (page.categories && page.categories.length) {
+%>
+									<span class="meta-category">
+
+<%-
+	list_categories(page.categories, {
+		show_count: false,
+		style: 'none',
+		separator: ', '
+
+	})
+%>
+									</span>
+<%
+	}
+%>
+							</p>
+
+<%
+	var title = page.title;
+	if (!title) {
+		title = 'No Title';
+	}
+	var target = '';
+	var link = url_for(page.path);
+	if (page.link) {
+		target = ' target="_blank" ';
+		link = page.link;
+	}
+%>
+							<h2 class="box-content-title">
+								<a href="<%- link %>" <%- target %> itemprop="url"><span class="content-title" itemprop="name"><%= title %></span></a>
+							</h2>
+
+							<div class="content post-item-content" itemprop="articleBody">
+
+<%- page.content %>
+
+							</div>
+
+<%
+	if (page.tags && page.tags.length) {
+%>
+							<div class="content-tag">
+
+<%-
+	list_tags(page.tags, {
+		show_count: false,
+		style: 'none',
+		separator: ', '
+	})
+%>
+
+							</div>
+<%
+	}
+%>
+
+
+						</article>
+					</div>
+				</div>
+
+				<div class="two wide column">
+					&nbsp;
+				</div>
+
+			</div>
+
+			<div class="panel-post-nav">
+				<div class="box-post-nav">
+		<%- partial('_widget/post-nav') %>
+				</div>
+			</div>
+		</div>

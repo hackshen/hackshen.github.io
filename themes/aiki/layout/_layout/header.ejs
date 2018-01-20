@@ -1,0 +1,28 @@
+<%
+	var logo = theme.logo;
+	if (!logo) {
+		logo = theme.image_src;
+	}
+	logo = url_for(logo);
+%>
+
+	<div class="layout-header">
+		<div class="ui fixed transparent inverted main menu panel-header">
+			<div class="container box-header">
+				<div class="title item header-item">
+					<a href="<%- url_for(config.root) %>" title="<%= config.subtitle %>"><%= config.title %></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="layout-menu">
+<%- partial('_widget/page-nav', {nav_type: 'main'}) %>
+	</div>
+
+	<div class="layout-menu-footer">
+<%- partial('_widget/page-nav', {nav_type: 'footer'}) %>
+	</div>
+
+

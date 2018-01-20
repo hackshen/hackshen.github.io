@@ -1,0 +1,16 @@
+
+<%
+	if (is_year() && !is_month()) { // only year
+%>
+	<%- partial('_widget/archive-list', {panel_title: 'Archive: ' + page.year}) %>
+<%
+	} else if (is_year() && is_month()) { // year + month
+%>
+	<%- partial('_widget/archive-list', {panel_title: 'Archive: ' + page.year + '/' + page.month}) %>
+<%
+	} else { //index
+%>
+	<%- partial('_widget/archive-index', {panel_title: 'Sitemap: '}) %>
+<%
+	}
+%>
