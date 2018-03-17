@@ -45,9 +45,11 @@ tags:
 	- nvm ls 列出本机已安装的node版本
 	- nvm ls-remote 列出所有远程服务器可安装的node版本
 	- nvm current 显示当前正在用的node版本
+	- nvm alias default v8.9.0 默认node版本
 	- nvm alias <name> <version> 给不用的node版本添加别名
 	- nvm unalias <name>  ## 删除已定义的别名
 
 ### Git
 
 ### Nginx
+
