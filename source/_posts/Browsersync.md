@@ -1,8 +1,8 @@
 ---
 title: Browsersync
-date: 2017-07-19 19:55:19 
+date: 2017-07-19 19:55:19
 categories: Gulp
-tags: 
+tags:
 - browsersync
 ---
 ### 简介：
@@ -18,12 +18,12 @@ tags:
 ### 静态网站
 ```javascript
 如果您想要监听.css文件, 您需要使用服务器模式。 BrowserSync 将启动一个小型服务器，并提供一个URL来查看您的网站。
-// --files 路径是相对于运行该命令的项目（目录） 
+// --files 路径是相对于运行该命令的项目（目录）
 browser-sync start --server --files "css/*.css"
 如果您需要监听多个类型的文件，您只需要用逗号隔开。例如我们再加入一个.html文件
-// --files 路径是相对于运行该命令的项目（目录） 
+// --files 路径是相对于运行该命令的项目（目录）
 browser-sync start --server --files "css/*.css, *.html"
-// 如果你的文件层级比较深，您可以考虑使用 **（表示任意目录）匹配，任意目录下任意.css 或 .html文件。 
+// 如果你的文件层级比较深，您可以考虑使用 **（表示任意目录）匹配，任意目录下任意.css 或 .html文件。
 browser-sync start --server --files "**/*.css, **/*.html"
 ```
 ### 动态网站

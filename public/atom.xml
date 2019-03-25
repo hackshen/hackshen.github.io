@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-17T12:10:36.000Z</updated>
+  <updated>2018-08-26T08:36:13.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,144 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NET::ERR_CERT_COMMON_NAME_INVALID </title>
+    <link href="http://yoursite.com/2018/08/26/NET-ERR-CERT-COMMON-NAME-INVALID/"/>
+    <id>http://yoursite.com/2018/08/26/NET-ERR-CERT-COMMON-NAME-INVALID/</id>
+    <published>2018-08-26T08:35:13.000Z</published>
+    <updated>2018-08-26T08:36:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”"><a href="#NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”" class="headerlink" title="NET::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”"></a>NET::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”</h1><blockquote><p>Chrome58以后对https的证书认证较为严格，证书里必须带有正确的Common Name，也就是必须有Subject Alternative Name. <a href="https://support.google.com/chrome/a/answer/7391219?hl=zh-Hans" target="_blank" rel="noopener">Google官网介绍链接地址</a></p></blockquote><h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ul><li>Mac： 10.12.6</li><li><p>NGINX：nginx/1.12.2</p></li><li><p>nginx 配置文件</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  git.hackshen.com;</span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  logs/host.access.log  main;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root   /Users/hackshen/nginx-web/;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name git.hackshen.com;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate  /usr/local/etc/nginx/hackshen.crt;</span><br><span class="line">    ssl_certificate_key  /usr/local/etc/nginx/hackshen.key;</span><br><span class="line">    location / &#123;</span><br><span class="line">         root   /Users/hackshen/nginx-web;</span><br><span class="line">         index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、在[ req ]一节下找到req_extensions = v3_req 取消注释</span><br><span class="line"><span class="number">2</span>、在[ v3_req ] 一节 增加 subjectAltName = @alt_names</span><br><span class="line"><span class="number">3</span>、在[ v3_req ] 一节 的上方增加一节</span><br><span class="line">    DNS<span class="number">.1</span> = i.alicdn.com</span><br><span class="line">    IP<span class="number">.1</span> = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="number">4</span>、生成csr</span><br><span class="line">    <span class="string">`openssl req -new -nodes -keyout server.key -out server.csr -config openssl.cnf`</span></span><br><span class="line"><span class="number">5</span>、生成公钥</span><br><span class="line">    <span class="string">`openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt -extensions v3_req -extfile openssl.cnf`</span></span><br><span class="line"><span class="number">6</span>、关于<span class="string">`openssl.cnf`</span>我的Mac上装的有OpenSSL但是没有这个文件，博主是在自己的centos上拷下来的</span><br></pre></td></tr></table></figure><h4 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h4><ul><li>双击<code>server.crt</code>安装证书到钥匙串里，且在钥匙串里面要选择<code>始终信任</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”&quot;&gt;&lt;a href=&quot;#NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>reg</title>
+    <link href="http://yoursite.com/2018/08/04/reg/"/>
+    <id>http://yoursite.com/2018/08/04/reg/</id>
+    <published>2018-08-04T15:50:44.000Z</published>
+    <updated>2018-08-04T15:50:44.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>你不知道的跨域</title>
+    <link href="http://yoursite.com/2018/07/18/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E8%B7%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2018/07/18/你不知道的跨域/</id>
+    <published>2018-07-18T11:46:30.000Z</published>
+    <updated>2018-07-18T11:46:30.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3 配置Eslint</title>
+    <link href="http://yoursite.com/2018/07/12/Sublime-Text-3-%E9%85%8D%E7%BD%AEEslint/"/>
+    <id>http://yoursite.com/2018/07/12/Sublime-Text-3-配置Eslint/</id>
+    <published>2018-07-12T11:32:50.000Z</published>
+    <updated>2018-07-12T11:34:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Sublime-Text-3-配置Eslint"><a href="#Sublime-Text-3-配置Eslint" class="headerlink" title="Sublime Text 3 配置Eslint"></a>Sublime Text 3 配置Eslint</h1><blockquote><p>由于目前打包项目里面没有配置Eslint，所以为了要求自己的代码更规范所以就折腾下</p></blockquote><h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mac：10.12.6</span><br><span class="line">node：v8.9.0</span><br><span class="line">sublime: build 3176</span><br></pre></td></tr></table></figure><h3 id="ESlint安装配置"><a href="#ESlint安装配置" class="headerlink" title="ESlint安装配置"></a>ESlint安装配置</h3><ul><li><p>首先我们要全局安装ESlint</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint -g</span><br></pre></td></tr></table></figure></li><li><p>安装sublimelinter &amp; sublimelinter-contrib-eslint</p><ul><li><p>Sublime​Linter：是一个代码检查框架插件，功能非常强大，支持各种语言的检查。但是它本身并没有代码检查的功能，需要借助 ESLint 这样的特定语言检查支持</p></li><li><p>sublimelinter-contrib-eslint：我们安装使用对应的 Sublime​Linter-contrib-eslint 插件可以帮助我们使用eslint</p></li><li><p>在sublime里面<code>command + shift + p</code>选择<code>Package Control:Install Package</code>然后在弹出的对话框中搜索<code>sublimelinter</code>点击安装，安装完后才操作以上步骤安装<code>SublimeLinter-contrib-eslint</code>此处有坑，直接搜索是搜索不出来的，要搜索eslint这样搜索框里面才会出现<code>SublimeLinter-contrib-eslint</code>点击安装即可</p></li></ul></li><li><p>按以上步骤安装成功后就配置下<code>sublimelinter</code>的node路径，配置文件如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// SublimeLinter Settings - User</span><br><span class="line">&#123;</span><br><span class="line">    &quot;paths&quot;: &#123;</span><br><span class="line">        &quot;linux&quot;: [],</span><br><span class="line">        &quot;osx&quot;: [</span><br><span class="line">            &quot;/Users/hackshen/.nvm/versions/node/v8.9.0/bin&quot; //# 设置 node 路径</span><br><span class="line">        ],</span><br><span class="line">        &quot;windows&quot;: []</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  node路径根据自己本机安装路径填写，Mac系统可以用<code>which  node</code>来查看本机node路径</p></li><li><p>一切准备就绪现在开始初始化eslint配置文件</p><ul><li><p>通过<code>eslint --init</code>在你的项目根目录初始化一个配置文件<code>.eslintrc.js</code>，初始化后的文件如下：</p> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"env"</span>: &#123;</span><br><span class="line">        <span class="string">"browser"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"eslint:recommended"</span>,</span><br><span class="line">    <span class="string">"rules"</span>: &#123;</span><br><span class="line">        <span class="string">"indent"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="number">4</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"linebreak-style"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"unix"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"quotes"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"single"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"semi"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"never"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li></ul></li></ul><p>我们可以自由配置，具体配置请参<a href="http://eslint.cn/docs/rules/" target="_blank" rel="noopener">官方eslint配置</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Sublime-Text-3-配置Eslint&quot;&gt;&lt;a href=&quot;#Sublime-Text-3-配置Eslint&quot; class=&quot;headerlink&quot; title=&quot;Sublime Text 3 配置Eslint&quot;&gt;&lt;/a&gt;Sublime Text 3 配置
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sublime 注册码失效</title>
+    <link href="http://yoursite.com/2018/05/24/sublime-%E6%B3%A8%E5%86%8C%E7%A0%81%E5%A4%B1%E6%95%88/"/>
+    <id>http://yoursite.com/2018/05/24/sublime-注册码失效/</id>
+    <published>2018-05-24T01:59:45.000Z</published>
+    <updated>2018-05-24T05:27:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>关于sublime注册码失效问题</p></blockquote><ul><li>起因：早上Mac重启后打开sublime提示注册码失效</li><li>本机环境：MacOs(0.12.6 )、sublime 3.0 build 3143</li><li>Google了一波，是因为sublime 3.1更改了验证方法</li><li><p>解决办法host文件添加以下解析：</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-----解决sublime 注册码失效-----</span></span><br><span class="line">127.0.0.1 license.sublimehq.com</span><br><span class="line">127.0.0.1 45.55.255.55</span><br><span class="line">127.0.0.1 45.55.41.223</span><br><span class="line"><span class="comment">#------------------------------</span></span><br></pre></td></tr></table></figure><p>  Mac host地址：<code>/etc/hosts</code></p></li></ul><blockquote><p>可用注册码(3143版本均可使用。)：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">----- BEGIN LICENSE -----</span><br><span class="line">eldon</span><br><span class="line">Single User License</span><br><span class="line">EA7E-1122628</span><br><span class="line">C0360740 20724B8A 30420C09 6D7E046F</span><br><span class="line">3F5D5FBB 17EF95DA 2BA7BB27 CCB14947</span><br><span class="line">27A316BE 8BCF4BC0 252FB8FF FD97DF71</span><br><span class="line">B11A1DA9 F7119CA0 31984BB9 7D71700C</span><br><span class="line">2C728BF8 B952E5F5 B941FF64 6D7979DA</span><br><span class="line">B8EB32F8 8D415F8E F16FE657 A35381CC</span><br><span class="line">290E2905 96E81236 63D2B06D E5F01A69</span><br><span class="line">84174B79 7C467714 641A9013 94CA7162</span><br><span class="line">------ END LICENSE ------</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;关于sublime注册码失效问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;起因：早上Mac重启后打开sublime提示注册码失效&lt;/li&gt;
+&lt;li&gt;本机环境：MacOs(0.12.6 )、sublime 3.0 build 3143&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iterm2</title>
+    <link href="http://yoursite.com/2018/05/18/iterm2/"/>
+    <id>http://yoursite.com/2018/05/18/iterm2/</id>
+    <published>2018-05-18T14:43:07.000Z</published>
+    <updated>2018-05-18T14:43:07.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome Dev tools</title>
+    <link href="http://yoursite.com/2018/05/18/Chrome-Dev-tools/"/>
+    <id>http://yoursite.com/2018/05/18/Chrome-Dev-tools/</id>
+    <published>2018-05-18T01:19:47.000Z</published>
+    <updated>2018-05-18T01:19:47.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mitmproxy</title>
+    <link href="http://yoursite.com/2018/05/18/mitmproxy/"/>
+    <id>http://yoursite.com/2018/05/18/mitmproxy/</id>
+    <published>2018-05-18T01:17:53.000Z</published>
+    <updated>2018-05-18T01:17:53.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>httponly</title>
@@ -206,165 +344,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Mac Nginx安装&amp;https</title>
-    <link href="http://yoursite.com/2017/12/17/Mac-Nginx%E5%AE%89%E8%A3%85-https/"/>
-    <id>http://yoursite.com/2017/12/17/Mac-Nginx安装-https/</id>
-    <published>2017-12-16T16:45:59.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>各种本地一建搭建web服务</title>
-    <link href="http://yoursite.com/2017/12/17/%E5%90%84%E7%A7%8D%E6%9C%AC%E5%9C%B0%E4%B8%80%E5%BB%BA%E6%90%AD%E5%BB%BAweb%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://yoursite.com/2017/12/17/各种本地一建搭建web服务/</id>
-    <published>2017-12-16T16:16:20.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Python篇"><a href="#Python篇" class="headerlink" title="Python篇"></a>Python篇</h2><h4 id="进入到需要启动web服务的目录执行以下命令即可"><a href="#进入到需要启动web服务的目录执行以下命令即可" class="headerlink" title="进入到需要启动web服务的目录执行以下命令即可"></a>进入到需要启动web服务的目录执行以下命令即可</h4><ul><li><p>Python3(后面8899是指定的端口可以不加)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server 8899</span><br></pre></td></tr></table></figure></li><li><p>Python2(后面8899是指定的端口可以不加)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8989</span><br></pre></td></tr></table></figure></li></ul><h2 id="Node篇"><a href="#Node篇" class="headerlink" title="Node篇"></a>Node篇</h2><h2 id="Nginx篇"><a href="#Nginx篇" class="headerlink" title="Nginx篇"></a>Nginx篇</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Python篇&quot;&gt;&lt;a href=&quot;#Python篇&quot; class=&quot;headerlink&quot; title=&quot;Python篇&quot;&gt;&lt;/a&gt;Python篇&lt;/h2&gt;&lt;h4 id=&quot;进入到需要启动web服务的目录执行以下命令即可&quot;&gt;&lt;a href=&quot;#进入到需要启动web
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Chrome打包自己，已安装的插件</title>
-    <link href="http://yoursite.com/2017/12/16/Chrome%E6%89%93%E5%8C%85%E8%87%AA%E5%B7%B1%EF%BC%8C%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E6%8F%92%E4%BB%B6/"/>
-    <id>http://yoursite.com/2017/12/16/Chrome打包自己，已安装的插件/</id>
-    <published>2017-12-16T15:50:10.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Chrome打包自己，已安装的插件"><a href="#Chrome打包自己，已安装的插件" class="headerlink" title="Chrome打包自己，已安装的插件"></a>Chrome打包自己，已安装的插件</h2><ul><li>浏览器地址栏输入<code>chrome://extensions/</code>打开安装的扩展程序</li><li><p>进入Chrome插件目录：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/Library/</span>Application Support/Google/Chrome/Default/Extensions/ID,ID换成你插件的ID，比如我电脑上Allow-Control-Allow-Origin这个插件的ID是nlfbmbojpeacfghkpbjhddihlkkiljbi,那我的插件 路径就是<span class="string">`~/Library/Application Support/Google/Chrome/Default/Extensions/nlfbmbojpeacfghkpbjhddihlkkiljbi</span></span><br></pre></td></tr></table></figure></li><li><p>在扩展程序界面选择开发者模式，这时候打包扩展程序这个选项才会显示出来</p></li><li>点击打包扩展程序，在扩展程序根目录输入框中填入第二步的路径，然后点击打包扩展程序，这时候会在打包插件的根目录生成一个crx文件，这就是打包好的插件</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Chrome打包自己，已安装的插件&quot;&gt;&lt;a href=&quot;#Chrome打包自己，已安装的插件&quot; class=&quot;headerlink&quot; title=&quot;Chrome打包自己，已安装的插件&quot;&gt;&lt;/a&gt;Chrome打包自己，已安装的插件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;浏览器地
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Browsersync</title>
-    <link href="http://yoursite.com/2017/07/19/Browsersync/"/>
-    <id>http://yoursite.com/2017/07/19/Browsersync/</id>
-    <published>2017-07-19T11:55:19.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><h5 id="BrowserSync-是一个同步多浏览器页面测试工具。更重要的是-Browsersync可以同时在PC、平板、手机等设备下进项调试。"><a href="#BrowserSync-是一个同步多浏览器页面测试工具。更重要的是-Browsersync可以同时在PC、平板、手机等设备下进项调试。" class="headerlink" title="BrowserSync 是一个同步多浏览器页面测试工具。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。"></a>BrowserSync 是一个同步多浏览器页面测试工具。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。</h5><h2 id="1、5分钟快速入门"><a href="#1、5分钟快速入门" class="headerlink" title="1、5分钟快速入门"></a>1、5分钟快速入门</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g browser-sync</span><br></pre></td></tr></table></figure><h2 id="2、启动-BrowserSync"><a href="#2、启动-BrowserSync" class="headerlink" title="2、启动 BrowserSync"></a>2、启动 BrowserSync</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个基本用途是，如果您只希望在对某个css文件进行修改后会同步到浏览器里。那么您只需要运行命令行工具，进入到该项目（目录）下，并运行相应的命令：</span><br></pre></td></tr></table></figure><h3 id="静态网站"><a href="#静态网站" class="headerlink" title="静态网站"></a>静态网站</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">如果您想要监听.css文件, 您需要使用服务器模式。 BrowserSync 将启动一个小型服务器，并提供一个URL来查看您的网站。</span><br><span class="line"><span class="comment">// --files 路径是相对于运行该命令的项目（目录） </span></span><br><span class="line">browser-sync start --server --files <span class="string">"css/*.css"</span></span><br><span class="line">如果您需要监听多个类型的文件，您只需要用逗号隔开。例如我们再加入一个.html文件</span><br><span class="line"><span class="comment">// --files 路径是相对于运行该命令的项目（目录） </span></span><br><span class="line">browser-sync start --server --files <span class="string">"css/*.css, *.html"</span></span><br><span class="line"><span class="comment">// 如果你的文件层级比较深，您可以考虑使用 **（表示任意目录）匹配，任意目录下任意.css 或 .html文件。 </span></span><br><span class="line">browser-sync start --server --files <span class="string">"**/*.css, **/*.html"</span></span><br></pre></td></tr></table></figure><h3 id="动态网站"><a href="#动态网站" class="headerlink" title="动态网站"></a>动态网站</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果您已经有其他本地服务器环境PHP或类似的，您需要使用代理模式。 BrowserSync将通过代理URL(localhost:<span class="number">3000</span>)来查看您的网站。</span><br><span class="line"><span class="comment">// 主机名可以是ip或域名</span></span><br><span class="line">browser-sync start --proxy <span class="string">"主机名"</span> <span class="string">"css/*.css"</span></span><br><span class="line">在本地创建了一个PHP服务器环境，并通过绑定Browsersync.cn来访问本地服务器，使用以下命令方式，Browsersync将提供一个新的地址localhost:<span class="number">3000</span>来访问Browsersync.cn，并监听其css目录下的所有css文件。</span><br><span class="line">browser-sync start --proxy <span class="string">"Browsersync.cn"</span> <span class="string">"css/*.css"</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h3&gt;&lt;h5 id=&quot;BrowserSync-是一个同步多浏览器页面测试工具。更重要的是-Browsersync可以同时在PC、平板、手机等设备
-      
-    
-    </summary>
-    
-      <category term="Gulp" scheme="http://yoursite.com/categories/Gulp/"/>
-    
-    
-      <category term="browsersync" scheme="http://yoursite.com/tags/browsersync/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Fiddler</title>
-    <link href="http://yoursite.com/2017/07/19/Fiddler/"/>
-    <id>http://yoursite.com/2017/07/19/Fiddler/</id>
-    <published>2017-07-19T11:54:46.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、What-Fiddler"><a href="#1、What-Fiddler" class="headerlink" title="1、What Fiddler"></a>1、What Fiddler</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一种Web调试工具。</span><br><span class="line">可以记录所有客户端和服务器的http和https请求。</span><br><span class="line">允许监视、设置断点、修改输入输出数据。</span><br></pre></td></tr></table></figure><h2 id="2、Fiddler的工作原理"><a href="#2、Fiddler的工作原理" class="headerlink" title="2、Fiddler的工作原理"></a>2、Fiddler的工作原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Fiddler 是以代理web服务器的形式工作的，它使用代理地址:<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>，端口:<span class="number">8888</span>。当Fiddler退出的时候它会自动注销，这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。解决的办法是重新启动下Fiddler。</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1、What-Fiddler&quot;&gt;&lt;a href=&quot;#1、What-Fiddler&quot; class=&quot;headerlink&quot; title=&quot;1、What Fiddler&quot;&gt;&lt;/a&gt;1、What Fiddler&lt;/h2&gt;&lt;figure class=&quot;highlight 
-      
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://yoursite.com/categories/Tools/"/>
-    
-    
-      <category term="Fiddler" scheme="http://yoursite.com/tags/Fiddler/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gulp-Livereload</title>
-    <link href="http://yoursite.com/2017/07/19/Gulp-Livereload/"/>
-    <id>http://yoursite.com/2017/07/19/Gulp-Livereload/</id>
-    <published>2017-07-19T10:12:13.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p> <strong>gulp-liereload是一个监听的文件发生改变时，浏览器会自动加载修改的文件，帮你自动刷新网页，彻底解放F5</strong> </p><h3 id="1、本地安装："><a href="#1、本地安装：" class="headerlink" title="1、本地安装："></a>1、本地安装：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp -g</span><br><span class="line">npm install gulp -D  </span><br><span class="line">npm install gulp-less -D</span><br><span class="line">npm install gulp-livereload -D</span><br></pre></td></tr></table></figure><h3 id="2、配置gulpfile-js"><a href="#2、配置gulpfile-js" class="headerlink" title="2、配置gulpfile.js"></a>2、配置gulpfile.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>), <span class="comment">//引入gulp</span></span><br><span class="line">    less = <span class="built_in">require</span>(<span class="string">'gulp-less'</span>), <span class="comment">//引入less</span></span><br><span class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>); <span class="comment">//引入livereload</span></span><br><span class="line"> </span><br><span class="line">gulp.task(<span class="string">'less'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//建一个less任务</span></span><br><span class="line">    gulp.src(<span class="string">'src/less/*.less'</span>) <span class="comment">//选择src/less/下面所有已less结尾的文件</span></span><br><span class="line">        .pipe(less()) <span class="comment">//编译less</span></span><br><span class="line">        .pipe(gulp.dest(<span class="string">'src/css'</span>)) <span class="comment">//编译后传到src/css目录下</span></span><br><span class="line">        .pipe(livereload()); <span class="comment">//加载修改的文件</span></span><br><span class="line">&#125;);</span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//新建一个watch任务</span></span><br><span class="line">    livereload.listen();  </span><br><span class="line">    gulp.watch(<span class="string">'src/less/**/*.less'</span>, [<span class="string">'less'</span>]); <span class="comment">//监听src/less下的less是否改变，然后执行less任务</span></span><br><span class="line">    gulp.watch(<span class="string">'src/**/*.*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        livereload.changed(event.path); <span class="comment">//把修改文件的路径输出到控制台</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="3、安装chrome插件"><a href="#3、安装chrome插件" class="headerlink" title="3、安装chrome插件"></a>3、安装chrome插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在谷歌商店里面搜索livereload下载并安装</span><br></pre></td></tr></table></figure><h3 id="4、执行任务"><a href="#4、执行任务" class="headerlink" title="4、执行任务"></a>4、执行任务</h3><ul><li>在当前目录打开命令行输入 gulp watch</li><li>然后在浏览器打开你的网页地址，必须以服务的形式打开比如：localhost/xx.html然后激活刚才安装的插件，（鼠标点击一下，里面的圆点变为实心即可）</li><li>这时你就可以快乐的写代码了</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;gulp-liereload是一个监听的文件发生改变时，浏览器会自动加载修改的文件，帮你自动刷新网页，彻底解放F5
-      
-    
-    </summary>
-    
-      <category term="Gulp" scheme="http://yoursite.com/categories/Gulp/"/>
-    
-    
-      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
-    
-      <category term="livereload" scheme="http://yoursite.com/tags/livereload/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About跨域</title>
-    <link href="http://yoursite.com/2017/07/18/About%E8%B7%A8%E5%9F%9F/"/>
-    <id>http://yoursite.com/2017/07/18/About跨域/</id>
-    <published>2017-07-18T04:22:47.000Z</published>
-    <updated>2018-05-10T02:57:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、Ajax-PHP-跨域问题（服务端方案）"><a href="#1、Ajax-PHP-跨域问题（服务端方案）" class="headerlink" title="1、Ajax + PHP 跨域问题（服务端方案）"></a>1、Ajax + PHP 跨域问题（服务端方案）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、指定域名(http:<span class="comment">//www.aipay.org),只需要在请求的文件头中添如下代码</span></span><br><span class="line"></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Origin:http://www.aipay.org'</span>);</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、允许所有域名都可以访问,只需要在请求的文件头中添如下代码</span><br><span class="line"></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Origin:*'</span>);</span><br></pre></td></tr></table></figure><h2 id="2、Ajax-PHP-跨域问题（通过客户端解决方案）"><a href="#2、Ajax-PHP-跨域问题（通过客户端解决方案）" class="headerlink" title="2、Ajax + PHP 跨域问题（通过客户端解决方案）"></a>2、Ajax + PHP 跨域问题（通过客户端解决方案）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>PHP代码：</span><br><span class="line">&lt;?php </span><br><span class="line">$cb=$_GET[<span class="string">'callback'</span>];</span><br><span class="line">echo $cb.<span class="string">'(&#123;"name":"张三"&#125;)'</span>;</span><br><span class="line">?&gt;</span><br><span class="line"><span class="number">2.</span>HTML代码：</span><br><span class="line">&lt;script src=<span class="string">"http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$.getJSON(<span class="string">'http://www.aipay.org/jsops/jsonp.php?callback=?'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><h2 id="3、JSONP解决跨域问题"><a href="#3、JSONP解决跨域问题" class="headerlink" title="3、JSONP解决跨域问题"></a>3、JSONP解决跨域问题</h2><p><strong>方案一：</strong>  通过getJSON,?后面会生成一个jQuery开头的随机函数名如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jQuery210101981845619370246_1500012205578如果我们想自己定义函数名呢看方案二</span><br><span class="line">&lt;script src=<span class="string">"http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $.getJSON(<span class="string">'http://sug.music.baidu.com/info/suggestion?      format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(data)</span><br><span class="line"> &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p><p><strong>方案二：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">自定义函数名</span><br><span class="line">&lt;script src=<span class="string">"http://cdn.bootcss.com/jquery/2.1.0-rc1/jquery.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">url:<span class="string">'http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=?'</span>,</span><br><span class="line">dataType:<span class="string">'jsonp'</span>,</span><br><span class="line">jsonpCallback:<span class="string">'test'</span>, <span class="comment">//自定义回调的函数名</span></span><br><span class="line">success:<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(response)</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p><h2 id="4、用原生方法解决跨域问题"><a href="#4、用原生方法解决跨域问题" class="headerlink" title="4、用原生方法解决跨域问题"></a>4、用原生方法解决跨域问题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>); </span><br><span class="line">script.src=<span class="string">'http://sug.music.baidu.com/info/suggestion?format=json&amp;word=ni&amp;version=2&amp;from=0&amp;callback=baidu'</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(script);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baidu</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1、Ajax-PHP-跨域问题（服务端方案）&quot;&gt;&lt;a href=&quot;#1、Ajax-PHP-跨域问题（服务端方案）&quot; class=&quot;headerlink&quot; title=&quot;1、Ajax + PHP 跨域问题（服务端方案）&quot;&gt;&lt;/a&gt;1、Ajax + PHP 跨域问题（
-      
-    
-    </summary>
-    
-      <category term="Javascript" scheme="http://yoursite.com/categories/Javascript/"/>
-    
-    
-      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   

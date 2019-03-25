@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加) 1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加) 1python -m SimpleHTTPServer 8989   Node篇Nginx篇">
+<meta name="description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加)  1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加)  1python -m SimpleHTTPServer 8989 Node篇Nginx篇 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="各种本地一建搭建web服务">
 <meta property="og:url" content="http://yoursite.com/2017/12/17/各种本地一建搭建web服务/index.html">
 <meta property="og:site_name" content="The wind">
-<meta property="og:description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加) 1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加) 1python -m SimpleHTTPServer 8989   Node篇Nginx篇">
+<meta property="og:description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加)  1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加)  1python -m SimpleHTTPServer 8989 Node篇Nginx篇 首先安装Homebrew 官网 1/usr/bin/ruby -e &quot;$(cur">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-10T02:57:00.000Z">
+<meta property="og:updated_time" content="2018-10-11T06:19:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各种本地一建搭建web服务">
-<meta name="twitter:description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加) 1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加) 1python -m SimpleHTTPServer 8989   Node篇Nginx篇">
+<meta name="twitter:description" content="Python篇进入到需要启动web服务的目录执行以下命令即可 Python3(后面8899是指定的端口可以不加)  1python3 -m http.server 8899  Python2(后面8899是指定的端口可以不加)  1python -m SimpleHTTPServer 8989 Node篇Nginx篇 首先安装Homebrew 官网 1/usr/bin/ruby -e &quot;$(cur">
 
 
 
@@ -333,14 +333,31 @@
 
       
         <h2 id="Python篇"><a href="#Python篇" class="headerlink" title="Python篇"></a>Python篇</h2><h4 id="进入到需要启动web服务的目录执行以下命令即可"><a href="#进入到需要启动web服务的目录执行以下命令即可" class="headerlink" title="进入到需要启动web服务的目录执行以下命令即可"></a>进入到需要启动web服务的目录执行以下命令即可</h4><ul>
-<li><p>Python3(后面8899是指定的端口可以不加)</p>
+<li>Python3(后面8899是指定的端口可以不加)</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server 8899</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Python2(后面8899是指定的端口可以不加)</p>
+<ul>
+<li>Python2(后面8899是指定的端口可以不加)</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8989</span><br></pre></td></tr></table></figure>
+<h2 id="Node篇"><a href="#Node篇" class="headerlink" title="Node篇"></a>Node篇</h2><h2 id="Nginx篇"><a href="#Nginx篇" class="headerlink" title="Nginx篇"></a>Nginx篇</h2><ul>
+<li><p>首先安装Homebrew <a href="https://brew.sh/" target="_blank" rel="noopener">官网</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装nginx</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置nginx.conf</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过brew info nginx  来查看nginx配置文件的路径,然后编辑nginx.conf文件，我的配置文件如下：</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen  80; <span class="comment">#监听端口</span></span><br><span class="line">    server_name  git.hackshen.com; <span class="comment">#监听地址</span></span><br><span class="line">    <span class="comment">#charset koi8-r;</span></span><br><span class="line">    <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line">    <span class="comment">#return   301 https://$server_name$request_uri; # 强制重定向为https</span></span><br><span class="line">    location / &#123;</span><br><span class="line">        root    /Users/hackshen/nginx-web/; <span class="comment"># 网站跟目录</span></span><br><span class="line">        index  index.html index.htm; <span class="comment">#设置默认页</span></span><br><span class="line">        <span class="comment">#proxy_pass http://git.hackshen.com:7001; #请求代理</span></span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动nginx</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 启动nginx的时候你可能遇到一下错误</span></span><br><span class="line">nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">443</span> failed (<span class="number">13</span>: Permission denied)</span><br><span class="line"></span><br><span class="line"><span class="comment">//主要是权限的问题，用以下命令启动即可</span></span><br><span class="line">sudo nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx常用命令</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload <span class="comment">//重启nginx服务</span></span><br><span class="line">nginx -s stop <span class="comment">//停止nginx服务</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="Node篇"><a href="#Node篇" class="headerlink" title="Node篇"></a>Node篇</h2><h2 id="Nginx篇"><a href="#Nginx篇" class="headerlink" title="Nginx篇"></a>Nginx篇</h2>
+
       
     </div>
 
@@ -461,7 +478,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
