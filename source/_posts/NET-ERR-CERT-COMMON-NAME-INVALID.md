@@ -3,7 +3,7 @@ title: 'NET::ERR_CERT_COMMON_NAME_INVALID '
 date: 2018-08-26 16:35:13
 tags:
 ---
-# NET::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”
+# NET:::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”
 > Chrome58以后对https的证书认证较为严格，证书里必须带有正确的Common Name，也就是必须有Subject Alternative Name. [Google官网介绍链接地址](https://support.google.com/chrome/a/answer/7391219?hl=zh-Hans)
 
 #### 本机环境
