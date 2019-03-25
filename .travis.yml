@@ -1,27 +1,29 @@
 language: node_js
 node_js: stable
 
+# S: Build Lifecycle
 install:
-- npm install -g gulp
-- npm install
+  - npm install
 
-# - npm install -g gulp
+#before_script:
+ # - npm install -g gulp
 
 script:
-- hexo g
+  - hexo g
 
 after_script:
-- cd ./public
-- git init
-- git config user.name "hackshen"
-- git config user.email "hackshen.com@gmail.com"
-- git add .
-- git commit -m "Update docs with TRAVIS-CI."
-- git push --force --quiet "https://${HEXO_BLOG}@${GH_REF}" master:master
+  - cd ./public
+  - git init
+  - git config user.name "hackshen"
+  - git config user.email "hackshen.com@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# E: Build LifeCycle
 
 branches:
-only:
-- hexo
+  only:
+    - hexo
 env:
-global:
-- GH_REF: github.com/hackshen/hackshen.github.io.git
+ global:
+   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
