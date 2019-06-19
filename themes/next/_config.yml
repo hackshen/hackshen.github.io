@@ -159,7 +159,7 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: false
-  
+
   # Enable sidebar on narrow view
   onmobile: false
 
@@ -296,7 +296,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+# baidu_analytics: 'baidu'
 
 # Duoshuo ShortName
 #duoshuo_shortname:
