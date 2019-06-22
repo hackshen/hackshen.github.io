@@ -19,10 +19,6 @@ env:
   global:
   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_27ecd69e9a11_key -iv $encrypted_27ecd69e9a11_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
 
 addons:
   ssh_known_hosts: 47.100.101.94
