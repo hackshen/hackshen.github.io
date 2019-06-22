@@ -24,8 +24,3 @@ addons:
 after_success:
 - ssh root@47.100.101.94 'echo fsdfs >> ~/shen567890.js'
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
-  -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
-- chmod 600 ~/.ssh/id_rsa_github
-- echo -e "Host 47.100.101.94\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
