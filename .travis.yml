@@ -20,11 +20,9 @@ env:
   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
 addons:
   ssh_known_hosts: 47.100.101.94
-after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@47.100.101.94:/
-- ssh root@47.100.101.94 'echo fsdfs >> ~/shen567890.js'
 before_install:
-- openssl aes-256-cbc -K $encrypted_27ecd69e9a11_key -iv $encrypted_27ecd69e9a11_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
+  -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 47.100.101.94\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- scp -o stricthostkeychecking=no -r public root@47.100.101.94:/
