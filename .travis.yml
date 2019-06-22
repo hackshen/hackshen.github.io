@@ -20,6 +20,10 @@ env:
   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
 addons:
   ssh_known_hosts: 47.100.101.94
+
+after_success:
+- ssh root@47.100.101.94 'echo fsdfs >> ~/shen567890.js'
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
   -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
