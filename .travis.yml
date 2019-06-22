@@ -3,7 +3,7 @@ node_js: stable
 install:
 - npm install
 script:
-- hexo g && rsync -az -vv --delete -e ssh public/ root@47.100.101.94:/
+- hexo g
 after_script:
 - cd ./public
 - git init
