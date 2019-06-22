@@ -1,29 +1,27 @@
 language: node_js
 node_js: stable
-
-# S: Build Lifecycle
 install:
-  - npm install
-
-#before_script:
- # - npm install -g gulp
-
+- npm install
 script:
-  - hexo g
-
+- hexo g
 after_script:
-  - cd ./public
-  - git init
-  - git config user.name "hackshen"
-  - git config user.email "hackshen.com@gmail.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${SHEN_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
-
+- cd ./public
+- git init
+- git config user.name "hackshen"
+- git config user.email "hackshen.com@gmail.com"
+- git add .
+- git commit -m "Update docs"
+- git push --force --quiet "https://${SHEN_TOKEN}@${GH_REF}" master:master
 branches:
   only:
-    - hexo
+  - hexo
 env:
- global:
-   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
+  global:
+  - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
+before_install:
+- openssl aes-256-cbc -K $encrypted_27ecd69e9a11_key -iv $encrypted_27ecd69e9a11_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+
+addons:
+  ssh_known_hosts: 47.100.101.94
