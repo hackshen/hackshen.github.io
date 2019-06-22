@@ -21,6 +21,7 @@ env:
 addons:
   ssh_known_hosts: 47.100.101.94
 before_install:
-- openssl aes-256-cbc -K $encrypted_27ecd69e9a11_key -iv $encrypted_27ecd69e9a11_iv -in travis.enc -out ~/.ssh/travis -d
- 
-
+- openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
+  -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
+- chmod 600 ~/.ssh/id_rsa_github
+- echo -e "Host 47.100.101.94\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
