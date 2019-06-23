@@ -18,10 +18,13 @@ branches:
 env:
   global:
   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
+
 addons:
   ssh_known_hosts: 47.100.101.94
+
 after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@47.100.101.94:/root/shen_blog
+- scp -o stricthostkeychecking=no -r public root@47.100.101.94:/root/shen_blog
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
   -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
