@@ -2,6 +2,7 @@
 Thumbs.db
 node_modules/
 .deploy_git
+public
 !.editorconfig
 !.gitignore
 !.npmignore
