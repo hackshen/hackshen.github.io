@@ -118,7 +118,7 @@ links:
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 # avatar: https://avatars2.githubusercontent.com/u/26369477?s=460&v=4
-avatar: /images/shen_avatar.jpeg
+avatar: /shen_avatar.jpeg
 
 # Table Of Contents in the Sidebar
 toc:
