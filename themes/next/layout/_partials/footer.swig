@@ -19,4 +19,8 @@
     NexT.{{ theme.scheme }}
   </a>
 </div>
+<div class="beian-info">
+  {{ __('浙ICP备') }} -
+  <a href="http://www.miitbeian.gov.cn/">20011173号</a>
+</div>
 {% endif %}
