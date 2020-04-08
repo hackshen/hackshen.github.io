@@ -19,11 +19,11 @@ env:
   global:
   - GH_REF: github.com/hackshen/hackshen.github.io.git --{仓库地址}
 addons:
-  ssh_known_hosts: 47.100.101.94
+  ssh_known_hosts: cdn.hackshen.com
 after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@47.100.101.94:/root/shen_blog
+- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@cdn.hackshen.com:/root/wwww
 before_install:
 - openssl aes-256-cbc -K $encrypted_5fda406a4caf_key -iv $encrypted_5fda406a4caf_iv
   -in id_rsa_github.enc -out ~/.ssh/id_rsa_github -d
 - chmod 600 ~/.ssh/id_rsa_github
-- echo -e "Host 47.100.101.94\nStrictHostKeyChecking no\nHostName 47.100.101.94\nUser root\nIdentityFile ~/.ssh/id_rsa_github\n" >> ~/.ssh/config
+- echo -e "Host cdn.hackshen.com\nStrictHostKeyChecking no\nHostName cdn.hackshen.com\nUser root\nIdentityFile ~/.ssh/id_rsa_github\n" >> ~/.ssh/config
