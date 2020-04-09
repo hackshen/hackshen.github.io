@@ -1,5 +1,5 @@
 ---
-title: SSH agent
+title: Get raspberry info
 date: 2020-04-09 09:17:22
 tags:
 ---
