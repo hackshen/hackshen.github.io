@@ -7,3 +7,4 @@ db.json
 !.editorconfig
 !.gitignore
 !.npmignore
+.idea/

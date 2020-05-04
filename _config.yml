@@ -5,7 +5,7 @@
 # Site
 title: Hshen
 subtitle: 人若无名 便可潜心练剑
-description: 不造写什么 什么
+description: Hello World
 author: Hshen
 language: en
 timezone:
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next-reloaded
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
