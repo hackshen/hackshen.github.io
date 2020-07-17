@@ -59,7 +59,7 @@
 {%- endif %}
 <div class="beian-info">
   {{ __('浙ICP备') }} -
-  <a href="http://www.miitbeian.gov.cn/">20011173号</a>
+  <a href="http://beian.miit.gov.cn">20011173号</a>
 </div>
 
 {{- next_inject('footer') }}
