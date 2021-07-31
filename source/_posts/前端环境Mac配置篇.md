@@ -48,8 +48,4 @@ tags:
 	- nvm alias default v8.9.0 默认node版本
 	- nvm alias <name> <version> 给不用的node版本添加别名
 	- nvm unalias <name>  ## 删除已定义的别名
-
-### Git
-
-### Nginx
-
+	

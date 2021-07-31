@@ -1,5 +1,5 @@
 ---
-title: About跨域
+title: 跨域
 date: 2017-07-18 12:22:47
 categories:
 - Javascript
