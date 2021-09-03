@@ -2,7 +2,7 @@ name: hexo
 
 on:
   push:
-    branches: [ hexo, master ]
+    branches: [ hexo ]
 
 jobs:
   gh-release:
@@ -41,4 +41,4 @@ jobs:
           git add .
           git commit -m "Update docs"
           git push --force --quiet git@github.com:hackshen/hackshen.github.io.git master:master
-          rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@cdn.hackshen.com:/data/www/blog
+          rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' ./ root@cdn.hackshen.com:/data/www/blog
