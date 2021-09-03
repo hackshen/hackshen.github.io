@@ -1,44 +1,26 @@
 ---
-title: docker-compose 部署 acme.sh申请Let's encrypt 证书
-date: 2020-09-29 9:51:55
+title: Mac Terminal Socks5 proxy Settings
+date: 2019-06-23 10:45:50
 tags:
 ---
 
-> acme.sh 实现了 acme 协议, 可以从 letsencrypt 生成免费的证书.
+>在公司拉github代码还是蛮快的，但是回到家用浏览器Socks5上GitHub贼快，但是Terminal默认不走Socks5所以拉代码贼慢，解决方法：让Terminal也走Socks5
 
-> [acme.sh地址](https://github.com/acmesh-official/acme.sh/wiki/Run-acme.sh-in-docker)
-
-> [获取阿里云AccessKey](https://usercenter.console.aliyun.com/?spm=5176.12818093.nav-right.dak.488716d0qgnmuw#/manage/ak)
-
-[docker & docker-compose install](https://github.com/hackshen/hdoc/blob/master/document/centos_env.md#install-docker)
-
-
- ```bash
-# 新建一个docker-compose.yml 
-touch docker-compose.yml
-
-# 填入下面配置
-version: "3"
-services:
-  acme.sh:
-    image: neilpang/acme.sh
-    container_name: acme.sh
-    restart: always
-    command: daemon
-    environment:
-      - Ali_Key=xxxxxxx # 此处填获取的阿里云的AccessKey
-      - Ali_Secret=xxxxxxx # 此处填获取的阿里云的AccessKey
-    volumes:
-      - ./ssl:/acme.sh
-
-# 启动容器(启动后可以通过 docker ps 查看当前运行的容器)
-docker-compose.yml up -d
-
-# 生成证书 (生成证书放在当前ssl目录)
-docker exec acme.sh \
-    --issue \
-    --dns dns_ali \
-    -d '*.hackshen.com' 
+#### 在Terminal输入以下代码
+```bash
+# 临时改变Terminal的代理，窗口关闭后失效
+export all_proxy=socks5://proxy.hackshen.com:1080
 ```
+把以下方法copy到你的~/.zshrc文件里
+```bash
+# Terminal proxy
+function proxy_off(){
+    unset http_proxy
+    echo -e "已关闭代理"
+}
 
-
+function proxy_on() {
+    export all_proxy=socks5://proxy.hackshen.com:1080 # 配置http和https访问
+    echo -e "已开启代理"
+}
+```
