@@ -1,0 +1,45 @@
+name: hexo
+
+on:
+  push:
+    branches: [ hexo, master ]
+
+jobs:
+  gh-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: hexo
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '8.x'
+      - uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.HEXO_KEY }}
+
+      - name: set ssh
+        env:
+          SSH_KEY: ${{ secrets.HEXO_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo -e "Host cdn.hackshen.com\nStrictHostKeyChecking no\nHostName cdn.hackshen.com\nUser root\nIdentityFile ~/.ssh/id_rsa_github\n" >> ~/.ssh/config
+      - name: init rsync
+        env:
+          USE_SSH: true
+          GIT_USER: hackshen
+          DEPLOYMENT_BRANCH: test
+        run: |
+          npm install
+          npx hexo g
+          cp ./.github -r ./public/
+          cd ./public
+          git init
+          git config user.name "hackshen"
+          git config user.email "hackshen.com@gmail.com"
+          git add .
+          git commit -m "Update docs"
+          git push --force --quiet git@github.com:hackshen/hackshen.github.io.git master:master
+          rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' public/ root@cdn.hackshen.com:/data/www/blog
