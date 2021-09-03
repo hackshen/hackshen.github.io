@@ -10,6 +10,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: hexo
+      - name: setNode
+        uses: actions/setup-node@v1
+        with:
+          node-version: '8.x'
+      - name: install
+        run: |
+          npm install
+          npx hexo g
       # 使用云开发 Github Action 部署
       - name: Deploy static to Tencent CloudBase
         id: deployStatic
