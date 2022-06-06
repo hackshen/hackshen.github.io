@@ -33,4 +33,4 @@ web:
 ```bash
 "envsubst '$$NGINX_HOST $$NGINX_PORT' < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 ```
-至此顺利的解决了我的问题
+至此顺利的解决了我的问题.
