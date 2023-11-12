@@ -1,5 +1,6 @@
 ---
 title: 基于 stable-diffusion-webui AI绘画
+date:
 ---
 
 #### 本机硬件配置
