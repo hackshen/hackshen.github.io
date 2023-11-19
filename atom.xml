@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hshen</title>
+  
+  <subtitle>人若无名 便可潜心练剑</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2023-11-19T06:33:42.625Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Hshen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我装了一台ITX</title>
+    <link href="http://yoursite.com/2023/11/19/itx/"/>
+    <id>http://yoursite.com/2023/11/19/itx/</id>
+    <published>2023-11-19T06:33:42.625Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>手头有一台MacBook，使用Windows用的是WTG+固态U盘，也挺方便的；但是吧自从看到这个机箱便使我有了装一台ITX的想法；</p></blockquote><h3 id="先上配置单"><a href="#先上配置单" class="headerlink" title="先上配置单"></a>先上配置单</h3><table><thead><tr><th>硬件</th><th align="left">品牌</th><th>价格</th><th>渠道</th></tr></thead><tbody><tr><td>内存</td><td align="left">金士顿骇客神条16x2</td><td></td><td>PDD</td></tr><tr><td>CPU</td><td align="left">12400</td><td></td><td>PDD</td></tr><tr><td>主板</td><td align="left">Asus b660i</td><td></td><td>PDD</td></tr><tr><td>硬盘</td><td align="left">三星 980 1T</td><td></td><td>JD</td></tr><tr><td>散热</td><td align="left">Axp90 full</td><td></td><td>TB</td></tr><tr><td>CPU扣具</td><td align="left">Lzmod</td><td></td><td>TB</td></tr><tr><td>硅脂</td><td align="left">利民</td><td></td><td>PDD</td></tr><tr><td>1700扣具</td><td align="left">利民</td><td></td><td>PDD</td></tr><tr><td>电源</td><td align="left">海盗船 白金SF600</td><td></td><td>TB</td></tr><tr><td>机箱</td><td align="left">机甲A4</td><td></td><td>TB</td></tr><tr><td>CPU散热风扇</td><td align="left">猫头鹰A12</td><td></td><td>PDD</td></tr><tr><td>机箱散热风扇</td><td align="left">猫头鹰A9</td><td></td><td>PDD</td></tr><tr><td>机箱散热风扇罩</td><td align="left"></td><td></td><td>TB</td></tr><tr><td>显卡</td><td align="left">微星万图师3050</td><td></td><td>JD</td></tr></tbody></table><h3 id="图片鉴赏"><a href="#图片鉴赏" class="headerlink" title="图片鉴赏"></a>图片鉴赏</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;手头有一台MacBook，使用Windows用的是WTG+固态U盘，也挺方便的；但是吧自从看到这个机箱便使我有了装一台ITX的想法；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;先上配置单&quot;&gt;&lt;a href=&quot;#先上配置单&quot; class=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我复制了一把钥匙</title>
+    <link href="http://yoursite.com/2023/11/19/cuid/"/>
+    <id>http://yoursite.com/2023/11/19/cuid/</id>
+    <published>2023-11-19T06:33:42.625Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>9月份搬家小区需要门禁，去物业录人脸已经录满了只能办门禁卡，20RMB一个，好在中介给了一个，但是上下班的我们2个着实不方便，想到以前买的神器ACR122，那就动手造一个吧；</p></blockquote><ul><li>工具ACR122、CUID卡</li><li>IC卡操作软件（万能的度娘）</li></ul><h3 id="卡片类型介绍"><a href="#卡片类型介绍" class="headerlink" title="卡片类型介绍"></a>卡片类型介绍</h3><table><thead><tr><th align="center">卡类型</th><th align="center">芯片名称</th><th align="center">频率</th><th align="center">擦写</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">反复</td><td align="center">UID复制卡</td><td align="center">13.56MHZ</td><td align="center">反复擦写</td><td align="center">不过防火墙，经典复制卡，魔术卡，可以反复擦写</td></tr><tr><td align="center">反复</td><td align="center">CUID复制卡</td><td align="center">13.56MHZ</td><td align="center">反复擦写</td><td align="center">过90%防火墙，UID卡复制成功刷卡无效的情况下，可使用此卡复制，电梯卡建议购买此卡</td></tr><tr><td align="center">反复</td><td align="center">FUID复制卡</td><td align="center">13.56MHZ</td><td align="center">只可写入一次</td><td align="center">过95%防火墙，CUID卡复制成功刷卡无效情况下，可使用此卡复制 一次性写入锁卡，不支持反复擦写</td></tr><tr><td align="center">反复</td><td align="center">UFUID复制卡</td><td align="center">13.56MHZ</td><td align="center">只可写入一次</td><td align="center">过95%防火墙，功能和FUID卡一样，区别自安于此卡支持手动锁卡，没有锁卡前就是一张UID卡，可以理解为高级UID卡，锁卡后不支持擦写</td></tr><tr><td align="center">反复</td><td align="center">IC授权卡</td><td align="center">13.56MHZ</td><td align="center">不可擦写</td><td align="center">过98%防火墙，普通卡，0（卡号块）出厂为锁定状态不可用于复制，只能授权，物业卡均为此卡，俗称授权卡</td></tr></tbody></table><h3 id="开搞"><a href="#开搞" class="headerlink" title="开搞"></a>开搞</h3><p>1、连接读卡器（会听到滴的一声）<br><img src="/imgs/addeb4e481cc4913a9d5c7d6a868103.jpg" width="50%" height="50%" /></p><p>2、读卡破解（破解成功如下图所示）<br><img src="/imgs/20230128135908.png" width="50%" height="50%" /><br>会在当前目录下生成一个dump扩展名文件<br>3、更改卡ID<br><img src="/imgs/image_ic.png" width="50%" height="50%" /><br>块0 8AFFC866DB0804006263646566676869 是买的CUID卡的原始ID，我们修改为门禁卡ID</p><p>4、查看卡ID是否修改成功<br><img src="/imgs/image_red.png"  width="50%" height="50%" /><br>我们看到0扇区的 0块的ID已经改变<br>5、写入卡信息<br><img src="/imgs/image_w.png" width="50%" height="50%" /><br>导入刚才破解的 dump文件，把它写入到新卡里面<br>6、查看写入的数据和原始卡是否有出入<br><img src="/imgs/image_cat.png" width="50%" height="50%" /><br>至此完美的复制了一张门禁卡；<br>7、每次带卡扣不太方便于是乎买了一张超薄的手机卡贴<br><img src="/imgs/e2267d306dcf2f16970fe2edd5221ba.jpg" width="50%" height="50%" /></p><h3 id="友情提示"><a href="#友情提示" class="headerlink" title="友情提示"></a>友情提示</h3><ul><li>曾经我尝试过不修改卡ID只复制数据门禁卡是不能用的</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;9月份搬家小区需要门禁，去物业录人脸已经录满了只能办门禁卡，20RMB一个，好在中介给了一个，但是上下班的我们2个着实不方便，想到以前买的神器ACR122，那就动手造一个吧；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;工具ACR122、
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基于 stable-diffusion-webui AI绘画</title>
+    <link href="http://yoursite.com/2023/11/19/ai/"/>
+    <id>http://yoursite.com/2023/11/19/ai/</id>
+    <published>2023-11-19T06:33:42.625Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="本机硬件配置"><a href="#本机硬件配置" class="headerlink" title="本机硬件配置"></a>本机硬件配置</h4><ul><li>windows 10</li><li>显卡4070公版</li></ul><h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><ul><li><a href="https://www.python.org/downloads/release/python-3106/" target="_blank" rel="noopener">Python 3.10.6 </a></li><li><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a></li><li><a href="https://huggingface.co/lllyasviel/ControlNet/tree/main/models" target="_blank" rel="noopener">模型库ControlNet</a></li></ul><h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><p>  1.克隆项目：<code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code></p><p>  2.运行<code>webui-user.bat</code> 非管理员权限运行</p><p>  3.把汉化包装一下<a href="https://github.com/VinsonLaro/stable-diffusion-webui-chinese" target="_blank" rel="noopener">中文语言包</a></p><p>  4.<a href="https://github.com/Mikubill/sd-webui-controlnet" target="_blank" rel="noopener">安装扩展</a></p><p>  5.下载模型库<a href="https://civitai.com/api/download/models/106289" target="_blank" rel="noopener">国风模型</a> 放到项目的<code>extensions/sd-webui-controlnet/models</code>文件下</p><p>  6.生成图片<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正向提示词</span></span><br><span class="line">masterpiece, best quality, [:(detailed face:1.2):0.2], shiny eyes, purple eyes, looking at viewer, 1girl, sumei, long hair, ((white hair)), summer top, shorts, white top, denim shorts, sunny weather, detailed background, outdoors, closed mouth, dynamic pose, &lt;lora:sumei_guo_V1_HRex:0.8&gt;</span><br><span class="line"><span class="comment"># 负向提示词</span></span><br><span class="line">(low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2)</span><br></pre></td></tr></table></figure><br><img src="../imgs/ai.png"></p><h4 id="civitai-com更多玩法"><a href="#civitai-com更多玩法" class="headerlink" title="civitai.com更多玩法"></a><a href="civitai.com">civitai.com更多玩法</a></h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;本机硬件配置&quot;&gt;&lt;a href=&quot;#本机硬件配置&quot; class=&quot;headerlink&quot; title=&quot;本机硬件配置&quot;&gt;&lt;/a&gt;本机硬件配置&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;windows 10&lt;/li&gt;
+&lt;li&gt;显卡4070公版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker-compose using environment</title>
+    <link href="http://yoursite.com/2020/05/13/docker-environment/"/>
+    <id>http://yoursite.com/2020/05/13/docker-environment/</id>
+    <published>2020-05-13T17:20:29.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>想在docker-compose里面配置nginx的变量，参考了dockerhub nginx的文档<a href="https://hub.docker.com/_/nginx/" target="_blank" rel="noopener">文档地址</a>  内容如下</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 官方Demo</span></span><br><span class="line">web:</span><br><span class="line">  image: nginx</span><br><span class="line">  volumes:</span><br><span class="line">   - ./mysite.template:/etc/nginx/conf.d/mysite.template</span><br><span class="line">  ports:</span><br><span class="line">   - <span class="string">"8080:80"</span></span><br><span class="line">  environment:</span><br><span class="line">   - NGINX_HOST=foobar.com</span><br><span class="line">   - NGINX_PORT=80</span><br><span class="line">  <span class="built_in">command</span>: /bin/bash -c <span class="string">"envsubst &lt; /etc/nginx/conf.d/mysite.template &gt; /etc/nginx/conf.d/default.conf &amp;&amp; exec nginx -g 'daemon off;'"</span></span><br></pre></td></tr></table></figure><p>按照官方给的文档我顺利的解决了NGINX传递变量的问题，但是配置文件mysite.template里面比如有些NGINX自己的变量比如 $request_uri、$server_name 都会被替换为空，既然这样我们就替换我们需要的变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"envsubst &lt; /etc/nginx/conf.d/mysite.template &gt; /etc/nginx/conf.d/default.conf &amp;&amp; exec nginx -g 'daemon off;'"</span></span><br><span class="line"><span class="comment"># 将上面的代码修改为</span></span><br><span class="line"><span class="string">"envsubst '<span class="variable">$NGINX_HOST</span> <span class="variable">$NGINX_PORT</span>' &lt; /etc/nginx/conf.d/mysite.template &gt; /etc/nginx/conf.d/default.conf &amp;&amp; exec nginx -g 'daemon off;'"</span></span><br></pre></td></tr></table></figure><p>但是这样并没解决我的问题，NGINX报错找不到这个变量，又是一顿谷够，找到了一片文档<a href="https://github.com/docker-library/docs/issues/496" target="_blank" rel="noopener">传送门</a>按照大神的意思是需要对变量转义，<code>$$NGINX_HOST $$NGINX_PORT</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"envsubst '$<span class="variable">$NGINX_HOST</span> $<span class="variable">$NGINX_PORT</span>' &lt; /etc/nginx/conf.d/mysite.template &gt; /etc/nginx/conf.d/default.conf &amp;&amp; exec nginx -g 'daemon off;'"</span></span><br></pre></td></tr></table></figure><p>至此顺利的解决了我的问题.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;想在docker-compose里面配置nginx的变量，参考了dockerhub nginx的文档&lt;a href=&quot;https://hub.docker.com/_/nginx/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;文
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Get raspberry info</title>
+    <link href="http://yoursite.com/2020/04/09/get-raspberry-info/"/>
+    <id>http://yoursite.com/2020/04/09/get-raspberry-info/</id>
+    <published>2020-04-09T09:17:22.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="获取-raspbery-CPU-RAM-DISK-IP-信息，驱动ssd1306"><a href="#获取-raspbery-CPU-RAM-DISK-IP-信息，驱动ssd1306" class="headerlink" title="获取 raspbery CPU RAM DISK IP 信息，驱动ssd1306"></a>获取 raspbery CPU RAM DISK IP 信息，驱动ssd1306</h2><blockquote><p><a href="https://luma-oled.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">Luma.OLED</a></p></blockquote><blockquote><p><a href="https://github.com/rm-hull/luma.oled" target="_blank" rel="noopener">Luma.OLED github</a></p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装驱动</span></span><br><span class="line">$ sudo apt install python-dev python-pip libfreetype6-dev libjpeg-dev build-essential libopenjp2-7 libtiff5</span><br><span class="line">$ sudo -H pip install --upgrade luma.oled</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:UTF-8 -*-</span></span><br><span class="line">from luma.core.interface.serial import i2c, spi</span><br><span class="line">from luma.core.render import canvas</span><br><span class="line">from luma.oled.device import ssd1306</span><br><span class="line">import time,os,socket,fcntl,struct</span><br><span class="line"></span><br><span class="line">def getHostIp():</span><br><span class="line">    try:</span><br><span class="line">        my = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">        my.connect((<span class="string">'8.8.8.8'</span>, 80))</span><br><span class="line">        <span class="comment"># ip = my.getsockname()[0]</span></span><br><span class="line">        ipList = my.getsockname()</span><br><span class="line">    finally:</span><br><span class="line">        my.close()</span><br><span class="line">    <span class="built_in">return</span> ipList</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return % of CPU used by user as a character string</span></span><br><span class="line">def getCPUuse():</span><br><span class="line">    <span class="built_in">return</span>(str(os.popen(<span class="string">"top -n1 | awk '/Cpu\(s\):/ &#123;print <span class="variable">$2</span>&#125;'"</span>).readline().strip()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return CPU temperature as a character string</span></span><br><span class="line">def getCPUtemperature():</span><br><span class="line">    res = os.popen(<span class="string">'vcgencmd measure_temp'</span>).readline()</span><br><span class="line">    <span class="built_in">return</span>(res.replace(<span class="string">"temp="</span>,<span class="string">""</span>).replace(<span class="string">"'C\n"</span>,<span class="string">""</span>))</span><br><span class="line"></span><br><span class="line">def getRAMinfo():</span><br><span class="line">    p = os.popen(<span class="string">'free'</span>)</span><br><span class="line">    i = 0</span><br><span class="line">    <span class="keyword">while</span> 1:</span><br><span class="line">        i = i + 1</span><br><span class="line">        line = p.readline()</span><br><span class="line">        <span class="keyword">if</span> i==2:</span><br><span class="line">            <span class="built_in">return</span>(line.split()[1:4])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def getDiskSpace():</span><br><span class="line">    p = os.popen(<span class="string">"df -h /"</span>)</span><br><span class="line">    i = 0</span><br><span class="line">    <span class="keyword">while</span> 1:</span><br><span class="line">        i = i +1</span><br><span class="line">        line = p.readline()</span><br><span class="line">        <span class="keyword">if</span> i==2:</span><br><span class="line">            <span class="built_in">return</span>(line.split()[1:5])</span><br><span class="line"></span><br><span class="line">def ramTotal():</span><br><span class="line">    <span class="built_in">return</span>(round(int(getRAMinfo()[0]) / 1000,1))</span><br><span class="line"></span><br><span class="line">def ramUsed():</span><br><span class="line">    <span class="built_in">return</span>(round(int(getRAMinfo()[1]) / 1000,1))</span><br><span class="line"></span><br><span class="line">def ramFree():</span><br><span class="line">    <span class="built_in">return</span>(round(int(getRAMinfo()[3]) / 1000,1))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 IIC 设备</span></span><br><span class="line">serial = i2c(port=1, address=0x3C)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果使用 SPI，换成这个</span></span><br><span class="line"><span class="comment"># serial = spi(device=0, port=0)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建屏幕的驱动实例</span></span><br><span class="line">device = ssd1306(serial)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">       with canvas(device) as draw:</span><br><span class="line">            draw.rectangle(device.bounding_box, outline=<span class="string">"white"</span>, fill=<span class="string">"black"</span>)</span><br><span class="line">            draw.text((18, 5), <span class="string">"Hshen raspberry"</span> , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((2, 14), <span class="string">"CPU:"</span> + getCPUuse() , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((62, 14), <span class="string">"Temp:"</span> + getCPUtemperature() , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((2, 23), <span class="string">"RAM:"</span> + str(ramUsed()) + <span class="string">"/"</span> + str(ramTotal()) , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((2, 33), <span class="string">"Disk:"</span> + str(getDiskSpace()[1]) + <span class="string">"/"</span> + str(getDiskSpace()[0]) , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((2, 42), <span class="string">"ip:"</span> + getHostIp()[0] , fill=<span class="string">"white"</span>)</span><br><span class="line">            draw.text((2, 52),time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, time.localtime())  , fill=<span class="string">"white"</span>)</span><br><span class="line">       time.sleep(2)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;获取-raspbery-CPU-RAM-DISK-IP-信息，驱动ssd1306&quot;&gt;&lt;a href=&quot;#获取-raspbery-CPU-RAM-DISK-IP-信息，驱动ssd1306&quot; class=&quot;headerlink&quot; title=&quot;获取 raspbery 
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>centos docker</title>
+    <link href="http://yoursite.com/2019/09/01/centos-docker/"/>
+    <id>http://yoursite.com/2019/09/01/centos-docker/</id>
+    <published>2019-09-01T20:31:07.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SSH agent</title>
+    <link href="http://yoursite.com/2019/08/17/SSH-agent/"/>
+    <id>http://yoursite.com/2019/08/17/SSH-agent/</id>
+    <published>2019-08-17T13:58:48.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>🌰: 有一下三台机器 S1、S2、S3 ===&gt; S1的公钥分别放在了S2和S3上面，当然也可以免密分别登录S2和S3，但是当你从S1登录到S2，如果再想从S2登录到S3是需要密码，因为你S2的公钥没有放在S3上面，不过我们可以让S2充当代理的角色</p></blockquote><h5 id="实现"><a href="#实现" class="headerlink" title="实现:"></a>实现:</h5><ul><li>方案1: 编辑本地 vi /etc/ssh/ssh_config 将ForwardAgent值设置为yes，表示允许客户端进行转发</li><li>方案2: ssh -A <a href="mailto:root@xxx.xxx.xxx.xxx">root@xxx.xxx.xxx.xxx</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;🌰: 有一下三台机器 S1、S2、S3 ===&amp;gt; S1的公钥分别放在了S2和S3上面，当然也可以免密分别登录S2和S3，但是当你从S1登录到S2，如果再想从S2登录到S3是需要密码，因为你S2的公钥没有放在S3上面，不过我们可以让S2充当代
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iphone socks proxy</title>
+    <link href="http://yoursite.com/2019/06/30/iphone-socks-proxy/"/>
+    <id>http://yoursite.com/2019/06/30/iphone-socks-proxy/</id>
+    <published>2019-06-30T22:15:27.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>PAC:代理自动配置（英语：Proxy auto-config，简称PAC）是一种网页浏览器技术，用于定义浏览器该如何自动选择适当的代理服务器来访问一个网址。<a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">维基百科</a></p></blockquote><ul><li>一个PAC文件包含一个JavaScript形式的函数“FindProxyForURL(url, host)”。这个函数返回一个包含一个或多个访问规则的字符串。用户代理根据这些规则适用一个特定的代理器或者直接访问。当一个代理服务器无法响应的时候，多个访问规则提供了其他的后备访问方法。浏览器在访问其他页面以前，首先访问这个PAC文件。PAC文件中的URL可能是手工配置的，也可能是是通过网页的网络代理自动发现协议（WPAD）自动配置的。</li></ul><ul><li><p>创建proxy.pac文件写入以下代码,xx.xx.xx.xx为你服务器的地址， yyyy为你Socks的端口，然后把文件放到你的服务器目录里面确保能访问到 比如：xxx.com/proxy.pac</p>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindProxyForURL</span>(<span class="params">url, host</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">"SOCKS xx.xx.xx.xx:yyyy"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后再iPhone上设置 &gt; WLAN &gt; HTTP PROXY 选择Automatic填入刚才文件的url</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;PAC:代理自动配置（英语：Proxy auto-config，简称PAC）是一种网页浏览器技术，用于定义浏览器该如何自动选择适当的代理服务器来访问一个网址。&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%BB
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SSH password free login</title>
+    <link href="http://yoursite.com/2019/06/29/SSH-password-free-login/"/>
+    <id>http://yoursite.com/2019/06/29/SSH-password-free-login/</id>
+    <published>2019-06-29T22:16:05.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>SSH 免密登录，手动把自己本地的公钥copy到远程服务器上~/.ssh/authorized_keys这个文件里面，如果没有就新建一个，比较快速方法就是在Terminal执行</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># root为远程登录的账户，xx.xx.xx.xx替换成你服务器ip</span></span><br><span class="line">ssh-copy-id root@xx.xx.xx.xx</span><br></pre></td></tr></table></figure><p>以后我们就可以ssh <a href="mailto:root@xx.xx.xx.xx">root@xx.xx.xx.xx</a> 就不需要输密码了😀</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;SSH 免密登录，手动把自己本地的公钥copy到远程服务器上~/.ssh/authorized_keys这个文件里面，如果没有就新建一个，比较快速方法就是在Terminal执行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;hi
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>travis aliyun</title>
+    <link href="http://yoursite.com/2019/06/27/travis-aliyun/"/>
+    <id>http://yoursite.com/2019/06/27/travis-aliyun/</id>
+    <published>2019-06-27T00:22:23.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac Terminal Socks5 proxy Settings</title>
+    <link href="http://yoursite.com/2019/06/23/test/"/>
+    <id>http://yoursite.com/2019/06/23/test/</id>
+    <published>2019-06-23T10:45:50.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在公司拉github代码还是蛮快的，但是回到家用浏览器Socks5上GitHub贼快，但是Terminal默认不走Socks5所以拉代码贼慢，解决方法：让Terminal也走Socks5</p></blockquote><h4 id="在Terminal输入以下代码"><a href="#在Terminal输入以下代码" class="headerlink" title="在Terminal输入以下代码"></a>在Terminal输入以下代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时改变Terminal的代理，窗口关闭后失效</span></span><br><span class="line"><span class="built_in">export</span> all_proxy=socks5://proxy.hackshen.com:1080</span><br></pre></td></tr></table></figure><p>把以下方法copy到你的~/.zshrc文件里</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Terminal proxy</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_off</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"已关闭代理"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_on</span></span>() &#123;</span><br><span class="line">    <span class="built_in">export</span> all_proxy=socks5://proxy.hackshen.com:1080 <span class="comment"># 配置http和https访问</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"已开启代理"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在公司拉github代码还是蛮快的，但是回到家用浏览器Socks5上GitHub贼快，但是Terminal默认不走Socks5所以拉代码贼慢，解决方法：让Terminal也走Socks5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;在Ter
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac Terminal Socks5 proxy Settings</title>
+    <link href="http://yoursite.com/2019/06/23/Test/"/>
+    <id>http://yoursite.com/2019/06/23/Test/</id>
+    <published>2019-06-23T10:45:50.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在公司拉github代码还是蛮快的，但是回到家用浏览器Socks5上GitHub贼快，但是Terminal默认不走Socks5所以拉代码贼慢，解决方法：让Terminal也走Socks5</p></blockquote><h4 id="在Terminal输入以下代码"><a href="#在Terminal输入以下代码" class="headerlink" title="在Terminal输入以下代码"></a>在Terminal输入以下代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时改变Terminal的代理，窗口关闭后失效</span></span><br><span class="line"><span class="built_in">export</span> all_proxy=socks5://proxy.hackshen.com:1080</span><br></pre></td></tr></table></figure><p>把以下方法copy到你的~/.zshrc文件里</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Terminal proxy</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_off</span></span>()&#123;</span><br><span class="line">    <span class="built_in">unset</span> http_proxy</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"已关闭代理"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">proxy_on</span></span>() &#123;</span><br><span class="line">    <span class="built_in">export</span> all_proxy=socks5://proxy.hackshen.com:1080 <span class="comment"># 配置http和https访问</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">"已开启代理"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在公司拉github代码还是蛮快的，但是回到家用浏览器Socks5上GitHub贼快，但是Terminal默认不走Socks5所以拉代码贼慢，解决方法：让Terminal也走Socks5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;在Ter
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Referer</title>
+    <link href="http://yoursite.com/2019/04/25/Referer/"/>
+    <id>http://yoursite.com/2019/04/25/Referer/</id>
+    <published>2019-04-25T09:24:20.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p> Referer 请求头包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。服务端一般使用 Referer 请求头识别访问来源，可能会以此进行统计分析、日志记录以及缓存优化等。</p></blockquote><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul><li><p>防盗链</p><ul><li>常见的图片防倒链: 比如你把百度图库的图片链接放到你的项目，图片不能正常显示</li></ul></li><li><p>防止恶意请求    </p><ul><li>接口调用: 通过referer 判断只允许自己项目的域调用此接口</li></ul></li><li><p>回跳</p><ul><li>登录：用户在登录页验证后回跳到到原来的页面</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt; Referer 请求头包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。服务端一般使用 Referer 请求头识别访问来源，可能会以此进行统计分析、日志记录以及缓存优化等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Centos 7 安装zsh和oh-my-zsh</title>
+    <link href="http://yoursite.com/2019/04/05/Centos-7-%E5%AE%89%E8%A3%85zsh%E5%92%8Coh-my-zsh/"/>
+    <id>http://yoursite.com/2019/04/05/Centos-7-%E5%AE%89%E8%A3%85zsh%E5%92%8Coh-my-zsh/</id>
+    <published>2019-04-05T23:11:51.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、查看当前系统是否有zsh</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure><p>2、如果没有zsh执行下面命令安装，如果已安装直接跳到第三步</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install zsh -y</span><br></pre></td></tr></table></figure><p>3、安装oh-my-zsh</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、查看当前系统是否有zsh&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>管理多个ssh key</title>
+    <link href="http://yoursite.com/2019/04/01/%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAssh-key/"/>
+    <id>http://yoursite.com/2019/04/01/%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAssh-key/</id>
+    <published>2019-04-01T20:20:56.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥"><a href="#公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥" class="headerlink" title="公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥"></a>公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥</h3><p>1、首先在本地生成一个公钥和私钥，回车输入你自定义的公钥名称（比如github）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"github邮箱"</span></span><br></pre></td></tr></table></figure><p>2、继续在本地生成公钥和私钥，输入自定义名称（比如gitlab）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"gitlab邮箱"</span></span><br></pre></td></tr></table></figure><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>在~/.ssh目录下面新建一个config文件内容如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Github</span></span><br><span class="line">Host github</span><br><span class="line">HostName github.com</span><br><span class="line">User hackshen.com@gmail.com</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github</span><br><span class="line"></span><br><span class="line"><span class="comment">#Gitlab</span></span><br><span class="line">Host gitlab</span><br><span class="line">HostName gitlab.alibaba-inc.com</span><br><span class="line">User <span class="string">'你的gitlab邮箱'</span></span><br><span class="line">IdentityFile ~/.ssh/id_rsa_gitlab</span><br></pre></td></tr></table></figure><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥&quot;&gt;&lt;a href=&quot;#公司用的是gitlab，但是有时候我也会向GitHub上面push代码，这就需要在本地配置多个公钥&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>抓包&amp;代理 </title>
+    <link href="http://yoursite.com/2019/03/31/Day/"/>
+    <id>http://yoursite.com/2019/03/31/Day/</id>
+    <published>2019-03-31T21:57:07.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>为什么要抓包？当你在手机上打开H5页面，你不能像浏览器那样可以打开控制台 查看资源的的请求和响应信息，且不能对不能对数据进行修改；抓包工具有很多 Charles、whistle、Flidder 等，工作需要需要目前我常用的就2个，Charles(收费的)和whistle，简单介绍下2个工具特点</p></blockquote><h3 id="Charles"><a href="#Charles" class="headerlink" title="Charles"></a><a href="https://www.charlesproxy.com/" target="_blank" rel="noopener">Charles</a></h3><h5 id="主要特征"><a href="#主要特征" class="headerlink" title="主要特征"></a>主要特征</h5><ul><li>SSL 代理– 以纯文本形式查看 SSL 请求和响应</li><li>带宽限制以模拟较慢的 Internet 连接，包括延迟</li><li>AJAX 调试——以树或文本形式查看 XML 和 JSON 请求和响应</li><li>AMF – 以树的形式查看 Flash Remoting / Flex Remoting 消息的内容</li><li>重复请求以测试后端更改</li><li>编辑请求以测试不同的输入</li><li>拦截和编辑请求或响应的断点</li><li>使用 W3C 验证器验证记录的 HTML、CSS 和 RSS/atom 响应</li></ul><blockquote><p>Charles 是收费的软件每30min会重启一次，对于经济条件有限的可以使用 <a href="https://www.zzzmode.com/mytools/charles/" target="_blank" rel="noopener">Charles 激活码计算器</a> 来解决临时需要Ps: 请支持正版</p></blockquote><h3 id="whistle"><a href="#whistle" class="headerlink" title="whistle"></a><a href="https://github.com/avwo/whistle" target="_blank" rel="noopener">whistle</a></h3><blockquote><p>whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上的Fiddler，主要用于查看、修改HTTP、HTTPS、Websocket的请求、响应，也可以作为HTTP代理服务器使用，不同于Fiddler通过断点修改请求响应的方式，whistle采用的是类似配置系统hosts的方式，一切操作都可以通过配置实现，支持域名、路径、正则表达式、通配符、通配路径等多种匹配方式，且可以通过Node模块扩展功</p></blockquote><h4 id="如何好用"><a href="#如何好用" class="headerlink" title="如何好用"></a>如何好用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Demo</span></span><br><span class="line">https://assets.alicdn.com/g/ae-fe/home-msite/0.0.48/index.js  localhost:3000/index.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 情景一</span></span><br><span class="line">你要和后端联调一个接口，你在本地起的项目域名是 localhost:3000 但是请求的接口是m.aliexpress.com/get/countrylist.htm, </span><br><span class="line">你本地开发调用接口势必会遇到跨域的问题，难道每次改完代码发预发验证效果么？这样效率太低了，</span><br><span class="line">我们大部分的项目都是前后端分离的，所以我们直接用线上跑的页面，静态资源引用我们本地代码，一边调试一遍看效果岂不美哉，</span><br><span class="line">上面的demo2就做了这样的事情，因为所有的代理都走的是whistle，whistle命中我们配置的规则会把https://assets.alicdn.com/g/ae-fe/home-msite/0.0.48/index.js 的</span><br><span class="line">响应体替换为 localhost:3000/index.js，它还会帮我们设置下响应头，no-store no-chche,解决我们改完代码立即生效问题</span><br></pre></td></tr></table></figure><h4 id="whistle还有一个GUI版本lightproxy"><a href="#whistle还有一个GUI版本lightproxy" class="headerlink" title="whistle还有一个GUI版本lightproxy"></a>whistle还有一个GUI版本<a href="https://github.com/alibaba/lightproxy" target="_blank" rel="noopener">lightproxy</a></h4><blockquote><p>LightProxy 是 IFE 团队开发的一款基于 Electron 和 whistle 的开源桌面代理软件，致力于让前端开发人员能够精确的掌握自己的开发环境，通过 HTTP 代理使用规则转发、修改每一个请求和响应的内容。</p></blockquote><blockquote><p> 个人偏向于web版的whistle 搭配 <a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="noopener">Proxy SwitchyOmega</a> 可自由的切换 系统代理，网页代理、直连等模式</p></blockquote><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g whistle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果你网络不要可以指定镜像源安装</span></span><br><span class="line">npm install whistle -g --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 whistle</span></span><br><span class="line">w2 start</span><br><span class="line"></span><br><span class="line"><span class="comment"># whistle会在本地起一个web服务默认端口8899，打开web服务你会看到：</span></span><br><span class="line">network: 经过whistle代理的一些http/s等服务</span><br><span class="line">rules:  你配置的规则</span><br></pre></td></tr></table></figure><h4 id="更多使用方式详见官网"><a href="#更多使用方式详见官网" class="headerlink" title="更多使用方式详见官网"></a><a href="http://wproxy.org/whistle/install.html" target="_blank" rel="noopener">更多使用方式详见官网</a></h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;为什么要抓包？当你在手机上打开H5页面，你不能像浏览器那样可以打开控制台 查看资源的的请求和响应信息，且不能对不能对数据进行修改；抓包工具有很多 Charles、whistle、Flidder 等，工作需要需要目前我常用的就2个，Charles(收
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>NET::ERR_CERT_COMMON_NAME_INVALID </title>
+    <link href="http://yoursite.com/2018/08/26/NET-ERR-CERT-COMMON-NAME-INVALID/"/>
+    <id>http://yoursite.com/2018/08/26/NET-ERR-CERT-COMMON-NAME-INVALID/</id>
+    <published>2018-08-26T16:35:13.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”"><a href="#NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”" class="headerlink" title="NET:::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”"></a>NET:::ERR_CERT_COMMON_NAME_INVALID 或“您的连接不是私密连接”</h1><blockquote><p>Chrome58以后对https的证书认证较为严格，证书里必须带有正确的Common Name，也就是必须有Subject Alternative Name. <a href="https://support.google.com/chrome/a/answer/7391219?hl=zh-Hans" target="_blank" rel="noopener">Google官网介绍链接地址</a></p></blockquote><h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><ul><li><p>Mac： 10.12.6</p></li><li><p>NGINX：nginx/1.12.2</p></li><li><p>nginx 配置文件</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  git.hackshen.com;</span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  logs&#x2F;host.access.log  main;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   &#x2F;Users&#x2F;hackshen&#x2F;nginx-web&#x2F;;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    error_page   500 502 503  &#x2F;50x.html;</span><br><span class="line">    location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">        root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name git.hackshen.com;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate  &#x2F;usr&#x2F;local&#x2F;etc&#x2F;nginx&#x2F;hackshen.crt;</span><br><span class="line">    ssl_certificate_key  &#x2F;usr&#x2F;local&#x2F;etc&#x2F;nginx&#x2F;hackshen.key;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">         root   &#x2F;Users&#x2F;hackshen&#x2F;nginx-web;</span><br><span class="line">         index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、在[ req ]一节下找到req_extensions = v3_req 取消注释</span><br><span class="line"><span class="number">2</span>、在[ v3_req ] 一节 增加 subjectAltName = @alt_names</span><br><span class="line"><span class="number">3</span>、在[ v3_req ] 一节 的上方增加一节</span><br><span class="line">    DNS<span class="number">.1</span> = i.alicdn.com</span><br><span class="line">    IP<span class="number">.1</span> = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="number">4</span>、生成csr</span><br><span class="line">    <span class="string">`openssl req -new -nodes -keyout server.key -out server.csr -config openssl.cnf`</span></span><br><span class="line"><span class="number">5</span>、生成公钥</span><br><span class="line">    <span class="string">`openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt -extensions v3_req -extfile openssl.cnf`</span></span><br><span class="line"><span class="number">6</span>、关于<span class="string">`openssl.cnf`</span>我的Mac上装的有OpenSSL但是没有这个文件，博主是在自己的centos上拷下来的</span><br></pre></td></tr></table></figure><h4 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h4><ul><li>双击<code>server.crt</code>安装证书到钥匙串里，且在钥匙串里面要选择<code>始终信任</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”&quot;&gt;&lt;a href=&quot;#NET-ERR-CERT-COMMON-NAME-INVALID-或“您的连接不是私密连接”&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>js 正则</title>
+    <link href="http://yoursite.com/2018/08/04/reg/"/>
+    <id>http://yoursite.com/2018/08/04/reg/</id>
+    <published>2018-08-04T23:50:44.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://github.com/qdlaoyao/js-regex-mini-book" target="_blank" rel="noopener">《JS 正则迷你书》</a> 学习正则值得看的书</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">| character | describe |</span><br><span class="line">|:-:|---|</span><br><span class="line">|\d | 匹配一个数字，即0-9 |</span><br><span class="line">|\D | 匹配一个非数字，即除了0-9 |</span><br><span class="line">|\w | 匹配一个单词字符（字母、数字、下划线） |</span><br><span class="line">|\W | 匹配任何非单词字符。等价于[^A-Za-z0-9_] |</span><br><span class="line">|\s | 匹配一个空白符 |</span><br><span class="line">|\S | 匹配一个非空白符 |</span><br><span class="line">|\b | 匹配单词边界 |</span><br><span class="line">|\B | 匹配非单词边界 |</span><br><span class="line">|.  | 匹配一个任意字符，除了换行符‘\n’和回车符‘\r’ |</span><br><span class="line">|\1 | 重复子项 |</span><br></pre></td></tr></table></figure><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h4 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// replace 第二个参数为函数的情况，$1为匹配到的字符，$2为分组，如果有多个分组依次增加$3,$4....</span></span><br><span class="line"><span class="string">`a1b2c3dddd4`</span>.replace(<span class="regexp">/([0-9])([a-z])/g</span>, ($<span class="number">1</span>, $<span class="number">2</span>) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`$1:--&gt;`</span> + $<span class="number">1</span>, <span class="string">`$2:--&gt;`</span> + $<span class="number">2</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 结果</span></span><br><span class="line"><span class="comment">// $1:--&gt;1b $2:--&gt;1</span></span><br><span class="line"><span class="comment">// $1:--&gt;2c $2:--&gt;2</span></span><br><span class="line"><span class="comment">// $1:--&gt;3d $2:--&gt;3</span></span><br></pre></td></tr></table></figure><h4 id="decodeHtml"><a href="#decodeHtml" class="headerlink" title="decodeHtml"></a>decodeHtml</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = &#123;</span><br><span class="line">    amp: <span class="string">'&amp;'</span>,</span><br><span class="line">    lt: <span class="string">'&lt;'</span>,</span><br><span class="line">    gt: <span class="string">'&gt;'</span>,</span><br><span class="line">    quot: <span class="string">'"'</span>,</span><br><span class="line">    <span class="string">'#39'</span>: <span class="string">"'"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decodeHtml</span>(<span class="params">deCodeStr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!deCodeStr) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">return</span> deCodeStr.replace(<span class="regexp">/&amp;([^;]+);/g</span>, ($<span class="number">1</span>, $<span class="number">2</span>) =&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> map[$<span class="number">2</span>];</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">parseUrl = (str)=&gt; &#123;</span><br><span class="line">    const tempObj=&#123;&#125;</span><br><span class="line">    const parseStr = str || window.location.href.split(<span class="string">'?'</span>)[1];</span><br><span class="line">    str.replace(/(.*?)=(.*?)(&amp;|$)/g,(a,b,c) =&gt;&#123;</span><br><span class="line">        tempObj[b] = c;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">return</span> tempObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/qdlaoyao/js-regex-mini-book&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《JS 正则迷你书》&lt;/a&gt; 学习正则值得看的书&lt;/p&gt;
+&lt;/block
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web Performance</title>
+    <link href="http://yoursite.com/2018/07/18/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E8%B7%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2018/07/18/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E8%B7%A8%E5%9F%9F/</id>
+    <published>2018-07-18T19:46:30.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="合并多个请求"><a href="#合并多个请求" class="headerlink" title="合并多个请求"></a>合并多个请求</h2><blockquote><p><a href="http://tengine.taobao.org/document_cn/http_concat_cn.html" target="_blank" rel="noopener">Tengine ngx_http_concat_module 模块文档</a></p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开的淘宝首页查看源码无意间你会发现这样加载静态资源</span></span><br><span class="line">&lt;script src=<span class="string">"//g.alicdn.com/??universal/polyfill/0.0.2/p/index/index.js,mtb/lib-env/1.9.9/env.js,mtb/lib-mtop/2.5.1/mtop.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="comment"># 浏览器的并发数是有限的，这样请求的好处就是，合并多个请求只用握手一次TCP连接，模块依赖层次比较明确</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;合并多个请求&quot;&gt;&lt;a href=&quot;#合并多个请求&quot; class=&quot;headerlink&quot; title=&quot;合并多个请求&quot;&gt;&lt;/a&gt;合并多个请求&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://tengine.taobao.org/docume
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 3 配置Eslint</title>
+    <link href="http://yoursite.com/2018/07/12/Sublime-Text-3-%E9%85%8D%E7%BD%AEEslint/"/>
+    <id>http://yoursite.com/2018/07/12/Sublime-Text-3-%E9%85%8D%E7%BD%AEEslint/</id>
+    <published>2018-07-12T19:32:50.000Z</published>
+    <updated>2023-11-19T06:33:42.625Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Sublime-Text-3-配置Eslint"><a href="#Sublime-Text-3-配置Eslint" class="headerlink" title="Sublime Text 3 配置Eslint"></a>Sublime Text 3 配置Eslint</h1><blockquote><p>由于目前打包项目里面没有配置Eslint，所以为了要求自己的代码更规范所以就折腾下</p></blockquote><h4 id="本机环境"><a href="#本机环境" class="headerlink" title="本机环境"></a>本机环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mac：10.12.6</span><br><span class="line">node：v8.9.0</span><br><span class="line">sublime: build 3176</span><br></pre></td></tr></table></figure><h3 id="ESlint安装配置"><a href="#ESlint安装配置" class="headerlink" title="ESlint安装配置"></a>ESlint安装配置</h3><ul><li><p>首先我们要全局安装ESlint</p>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint -g</span><br></pre></td></tr></table></figure></li><li><p>安装sublimelinter &amp; sublimelinter-contrib-eslint</p><ul><li><p>Sublime​Linter：是一个代码检查框架插件，功能非常强大，支持各种语言的检查。但是它本身并没有代码检查的功能，需要借助 ESLint 这样的特定语言检查支持</p></li><li><p>sublimelinter-contrib-eslint：我们安装使用对应的 Sublime​Linter-contrib-eslint 插件可以帮助我们使用eslint</p></li><li><p>在sublime里面<code>command + shift + p</code>选择<code>Package Control:Install Package</code>然后在弹出的对话框中搜索<code>sublimelinter</code>点击安装，安装完后才操作以上步骤安装<code>SublimeLinter-contrib-eslint</code>此处有坑，直接搜索是搜索不出来的，要搜索eslint这样搜索框里面才会出现<code>SublimeLinter-contrib-eslint</code>点击安装即可</p></li></ul></li><li><p>按以上步骤安装成功后就配置下<code>sublimelinter</code>的node路径，配置文件如下：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; SublimeLinter Settings - User</span><br><span class="line">&#123;</span><br><span class="line">    &quot;paths&quot;: &#123;</span><br><span class="line">        &quot;linux&quot;: [],</span><br><span class="line">        &quot;osx&quot;: [</span><br><span class="line">            &quot;&#x2F;Users&#x2F;hackshen&#x2F;.nvm&#x2F;versions&#x2F;node&#x2F;v8.9.0&#x2F;bin&quot; &#x2F;&#x2F;# 设置 node 路径</span><br><span class="line">        ],</span><br><span class="line">        &quot;windows&quot;: []</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  node路径根据自己本机安装路径填写，Mac系统可以用<code>which  node</code>来查看本机node路径</p></li><li><p>一切准备就绪现在开始初始化eslint配置文件</p><ul><li><p>通过<code>eslint --init</code>在你的项目根目录初始化一个配置文件<code>.eslintrc.js</code>，初始化后的文件如下：</p> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"env"</span>: &#123;</span><br><span class="line">        <span class="string">"browser"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"eslint:recommended"</span>,</span><br><span class="line">    <span class="string">"rules"</span>: &#123;</span><br><span class="line">        <span class="string">"indent"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="number">4</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"linebreak-style"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"unix"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"quotes"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"single"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"semi"</span>: [</span><br><span class="line">            <span class="string">"error"</span>,</span><br><span class="line">            <span class="string">"never"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>我们可以自由配置，具体配置请参<a href="http://eslint.cn/docs/rules/" target="_blank" rel="noopener">官方eslint配置</a></p></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Sublime-Text-3-配置Eslint&quot;&gt;&lt;a href=&quot;#Sublime-Text-3-配置Eslint&quot; class=&quot;headerlink&quot; title=&quot;Sublime Text 3 配置Eslint&quot;&gt;&lt;/a&gt;Sublime Text 3 配置
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
